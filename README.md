@@ -5,5 +5,8 @@ Final Project - Netflix clone
 - Jouke
 - Sunny
 - Kacem
+ 
+  git config --global user.email "you@example.com" !!including the quotes!!
+  git config --global user.name "Your Name"
 
 
