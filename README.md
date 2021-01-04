@@ -6,7 +6,7 @@ Final Project - Netflix clone
 - Sunny
 - Kacem
 - Mari
- 
+
   git config --global user.email "you@example.com" 
   git config --global user.name "Your Name"
   //including the quotes!!
