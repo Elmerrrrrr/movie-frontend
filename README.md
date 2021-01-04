@@ -1,3 +1,9 @@
 # movie-frontend
 Final Project - Netflix clone
-Sunny
+#Team Menbers
+- Elmer
+- Jouke
+- Sunny
+- Kacem
+
+
