@@ -7,6 +7,8 @@ Final Project - Netflix clone
 - Kacem
 - Mari
 
+NEW CONTENT!!!!!!!!
+
   git config --global user.email "you@example.com" 
   git config --global user.name "Your Name"
   //including the quotes!!
