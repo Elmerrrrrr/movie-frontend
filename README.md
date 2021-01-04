@@ -5,5 +5,5 @@ Final Project - Netflix clone
 - Jouke
 - Sunny
 - Kacem
-
+- Mari
 
