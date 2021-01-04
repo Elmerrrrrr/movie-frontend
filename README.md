@@ -1,3 +1,3 @@
-# movie-frontend
-deleted read me content
-oh my god changed more stuff
+git pull // binnenhalen laatste updates
+git checkout -b KacemBazi
+git add .
