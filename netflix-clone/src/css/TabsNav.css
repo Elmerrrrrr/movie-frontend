@@ -59,3 +59,7 @@ ul li:hover svg path {
 .tab-selected svg path {
     fill: #fff;
 }
+
+.back-btn {
+    text-align: center;
+}
