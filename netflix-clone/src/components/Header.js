@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../svg/logo.svg';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 import { Button } from './Button';
 import styled from 'styled-components';
 import Icon from 'react-icons-kit';
@@ -14,7 +14,7 @@ class Header extends Component {
             <HeaderComponent className="header-container">
                 <div className="header-top">
                     <Logo src={logo} />
-                    <NavLink className="signIn-btn" to="/">Sign In</NavLink>
+                    <NavLink className="signIn-btn" to="/home">Demo</NavLink>
 
                 </div>
                 {/* Header Content */}
@@ -25,6 +25,8 @@ class Header extends Component {
                         try it now
                         <Icon className="Icon" icon = {ic_keyboard_arrow_right} size={37} />
                     </Button>
+                    
+                    
                 </div>
 
 
@@ -35,7 +37,7 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);
 
 // Logo
 const Logo = styled.img`
@@ -65,6 +67,7 @@ const HeaderComponent = styled.div`
     transition: background 0.2s ease-in;
     &: hover {
         background: var(--main-red-hover);
+        color: #fff;
     }
 }
 
