@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../svg/logo.svg';
 import { NavLink, Link } from 'react-router-dom';
+import { Button } from './Button';
 import styled from 'styled-components';
 import Icon from 'react-icons-kit';
 import {ic_keyboard_arrow_right} from 'react-icons-kit/md/ic_keyboard_arrow_right';
+
 
 
 class Header extends Component {
@@ -19,9 +21,10 @@ class Header extends Component {
                 <div className="header-content">
                     <Title>See what's next.</Title>
                     <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME.</SubTitle>
-                    <Link className="main-offer-btn">try it now
+                    <Button className="main-offer-btn" to="/" primary>
+                        try it now
                         <Icon className="Icon" icon = {ic_keyboard_arrow_right} size={37} />
-                    </Link>
+                    </Button>
                 </div>
 
 
@@ -82,32 +85,13 @@ const HeaderComponent = styled.div`
     align-content: center;
     text-align: center;
     flex-direction: column;
-    z-index: 1;
+    z-index: 2;
 }
 
-// Main Offer Btn
-.main-offer-btn {
-    display: inline-block;
-    background: var(--main-red);
-    text-transform: uppercase;
-    border: none;
-    outline: none;
-    margin: 0 33%;
-    padding: 1.5rem;
-    border-radius: 0.1875rem;
-    font-size: 2rem;
-    text-align: center;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.45);
-    transition: background 0.2s ease-in;
-    cursor: pointer;
-    &:hover {
-        background: var(--main-red-hover)
-    }
-}
 
-.Icon svg {
-    vertical.align: bottom;
-    margin-left: 1.5rem;
+.Icon {
+    vertical-align: bottom;
+    margin-left: 1.125rem;
 
 }
 
