@@ -17,7 +17,9 @@ function Banner() {
       return request;
     }
     fetchData();}, []);
+
   console.log(movie);
+
   function truncate(str, n){
     return str?.lenght> n ? str.substr(0,n-1)+"...":str;
   }
@@ -34,7 +36,7 @@ className="banner"
       >
       
         <div className="banner_contents">
-        <h1 classname="banner_title">
+        <h1 className="banner_title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
