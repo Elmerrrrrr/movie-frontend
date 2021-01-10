@@ -12,7 +12,7 @@ function Banner() {
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.lenght - 1)
-        ]
+        ] 
       );
       return request;
     }

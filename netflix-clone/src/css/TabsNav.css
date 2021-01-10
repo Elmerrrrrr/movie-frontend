@@ -5,6 +5,7 @@
     fill: var(--main-gray);
 }
 
+
 /* Tab Nav Number Two */
 .tab-icon-devices {
     width: 9.6875rem;
@@ -62,4 +63,44 @@ ul li:hover svg path {
 
 .back-btn {
     text-align: center;
+}
+
+/* // Media Tab Nav#1 */
+@media(max-width: 900px) {
+    .tab-icon-door {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+/* // Media Tab Nav#2 */
+@media(max-width: 900px) {
+    .tab-icon-devices {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+/* // Media Tab Nav#3 */
+@media(max-width: 900px) {
+    .tab-icon-price {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+/* Media for Tabs Nav */
+@media(min-width: 900px) {
+    .mdScreen {
+        display: none;
+    }
+}
+
+@media(max-width: 900px) {
+    .lgScreen {
+        display: none;
+    }
+    .mdScreen {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
 }

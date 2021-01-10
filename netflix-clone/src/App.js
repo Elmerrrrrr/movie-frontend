@@ -20,9 +20,11 @@ function App() {
       <Router>  
 
         <Switch>   
-
+          {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
 
+          {/* From here it is the main page with all the video content */}
+          
           <Route path="/home">  
 
             <Nav />
