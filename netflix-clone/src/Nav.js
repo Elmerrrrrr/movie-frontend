@@ -37,6 +37,7 @@ function Nav() {
       <div className="nav_icons">
         <ul>
           <li>
+
             <img src={search} alt="search" />
           </li>
           <li>
@@ -44,6 +45,7 @@ function Nav() {
           </li>
           <li>
             <img src={bell} alt="Bell" />
+            
           </li>
         </ul>
       </div>
