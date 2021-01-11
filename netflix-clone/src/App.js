@@ -3,6 +3,7 @@ import Row from "./Row";
 import requests from "./requests";
 import Banner from "./Banner";
 import Nav from "./Nav.js";
+import Footer from "./components/Footer";
 
 
 import './css/Landingpage.css';
@@ -44,6 +45,8 @@ function App() {
             <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
             <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+
+            <Footer />
 
           </Route>
 

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
+import search from './images/Marisearch.png';
+import gift from './images/Marigifts.png';
+import bell from './images/Maribells.png';
+
 
 function Nav() {
   const [show, handleShow] = useState(false);
@@ -10,8 +14,9 @@ function Nav() {
       } else handleShow(false);
     });
 
-    
-    
+    // return () => {
+    //   window.removeEventListener("scroll");
+    // };
   }, []);
 
   return (
@@ -21,6 +26,27 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
+      <ul>
+        <li>Home</li>
+        <li>Series</li>
+        <li>Films</li>
+        <li>New &#38; Popular</li>
+        <li>My list</li>
+      </ul>
+
+      <div className="nav_icons">
+        <ul>
+          <li>
+            <img src={search} alt="search" />
+          </li>
+          <li>
+            <img src={gift} alt="Gift" />
+          </li>
+          <li>
+            <img src={bell} alt="Bell" />
+          </li>
+        </ul>
+      </div>
 
       <img
         className="nav_avatar"

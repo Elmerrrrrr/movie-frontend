@@ -7,6 +7,7 @@
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
+  cursor: pointer;
 }
 
 .row_posters::-webkit-scrollbar {

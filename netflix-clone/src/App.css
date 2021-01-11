@@ -1,8 +1,7 @@
 * {
-    margin: 0;
-    /* background-color: #111; */
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+}
 
-  
+.App {
+  background-color: #111;
+}
