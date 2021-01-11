@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
+import search from './images/Marisearch.png';
+import gift from './images/Marigifts.png';
+import bell from './images/Maribells.png';
+
 
 function Nav() {
   const [show, handleShow] = useState(false);
@@ -10,9 +14,9 @@ function Nav() {
       } else handleShow(false);
     });
 
-    return () => {
-      window.removeEventListener("scroll");
-    };
+    // return () => {
+    //   window.removeEventListener("scroll");
+    // };
   }, []);
 
   return (
@@ -33,13 +37,15 @@ function Nav() {
       <div className="nav_icons">
         <ul>
           <li>
-            <img src="./img/Marisearch.png" alt="search" />{" "}
+
+            <img src={search} alt="search" />
           </li>
           <li>
-            <img src="./img/Marigifts.png" alt="Gift" />{" "}
+            <img src={gift} alt="Gift" />
           </li>
           <li>
-            <img src="./img/Maribells.png" alt="Bell" />{" "}
+            <img src={bell} alt="Bell" />
+            
           </li>
         </ul>
       </div>
