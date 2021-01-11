@@ -22,6 +22,27 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
+      <ul>
+        <li>Home</li>
+        <li>Series</li>
+        <li>Films</li>
+        <li>New &#38; Popular</li>
+        <li>My list</li>
+      </ul>
+
+      <div className="nav_icons">
+        <ul>
+          <li>
+            <img src="./img/Marisearch.png" alt="search" />{" "}
+          </li>
+          <li>
+            <img src="./img/Marigifts.png" alt="Gift" />{" "}
+          </li>
+          <li>
+            <img src="./img/Maribells.png" alt="Bell" />{" "}
+          </li>
+        </ul>
+      </div>
 
       <img
         className="nav_avatar"
