@@ -1,12 +1,19 @@
+@import './fonts.css';
+
 .row{
-    color: white;
+  font-family: 'Netreg';
+  font-size: 12px;
+    color:#e5e5e5;
     margin-left: 20px;
 }
+
+
 .row_posters {
   display: flex;
+  justify-content: flex-start;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -17,10 +24,11 @@
 
 .row_poster {
   object-fit: contain;
-  width: 100%;
-  max-height: 100px;
-  margin-right: 10px;
+  width: 120%;
+  max-height: 122px;
+  margin-right:0.3rem;
   transition: transform 450ms;
+  border-radius: 5px;
 }
 
 .row_poster:hover {

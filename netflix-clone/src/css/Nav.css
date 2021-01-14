@@ -1,0 +1,105 @@
+
+@import './fonts.css';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  padding: 25px;
+  z-index: 1;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+
+}
+
+.nav_logo {
+  position: fixed;
+  left: 45px;
+  width: 100px;
+  object-fit: contain;
+  
+  
+}
+.account {
+  position: fixed;
+  right: 2.5rem;
+  width: 30px;
+  border-radius: 3px;
+  object-fit: contain;
+  margin-right: 2rem;
+
+}
+
+.nav_darken {
+  background-color: #141414;;
+  
+}
+
+.nav ul {
+  font-family:'Netreg';
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  
+  align-items: center;
+  
+  
+}
+.nav li {
+  margin-left: 15px;
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  
+ 
+}
+
+
+.nav_right {
+  display: flex;
+  align-items: center;
+  padding-right: 6rem;
+  cursor: pointer;
+ 
+ 
+}
+
+.nav_right ul{
+  align-items: center;
+  
+}
+
+.nav_right img {
+  display: flex;
+  height: 1.3rem;
+  width: 1.3rem;
+ 
+  
+}
+.nav_left  {
+  display: flex;
+  align-items: center;
+  margin-left:5.8rem;
+  
+}
+.nav_left ul{
+  display: flex;
+  align-items: center;
+}
+
+
+.nav_left ul li:hover {
+  color:#b0b0b0;
+  transition: all 0.2s;
+}
+
+
+
+
+
+

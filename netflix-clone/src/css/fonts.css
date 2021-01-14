@@ -1,0 +1,28 @@
+@font-face{
+   
+   font-family:'Netbold';
+   src:local('NetflixSans2'), url(../fonts/NetflixSans_W_Bd.ttf) format('truetype');
+}
+
+@font-face{
+   
+    font-family:'Netreg';
+    src:local('NetflixSans1'), url(../fonts/NetflixSans_W_Rg.ttf) format('truetype');
+ }
+
+ @font-face{
+   
+    font-family:'Netmid';
+    src:local('NetflixSans2'), url(../fonts/NetflixSans_W_Md.ttf) format('truetype');
+ }
+
+@font-face{
+   
+   font-family:'Netlite';
+   src:local('NetflixSans2'), url(../fonts/NetflixSans_W_Lt.ttf) format('truetype');
+}
+@font-face{
+   
+   font-family:'Nethin';
+   src:local('NetflixSans2'), url(../fonts/NetflixSans_W_Th.ttf) format('truetype');
+}

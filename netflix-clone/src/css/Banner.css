@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 .banner {
   color: white;
   object-fit: contain;
@@ -11,8 +13,8 @@
 }
 
 .banner_title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 4rem;
+  font-family:'Netlite';
+  font-size: 7rem;
   font-weight: 800;
   padding-bottom: 0.9rem;
 }
@@ -27,13 +29,13 @@
 }
 
 .banner_button {
+  font-family: 'netmid';
   cursor: pointer;
   color: white;
   outline: none;
   border: none;
-  font-size: 1.2rem;
-  font-weight: 780;
-  border-radius: 0.5vw;
+  font-size: 1.1rem;
+  border-radius: 0.4vw;
   margin-left: 0.1;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
