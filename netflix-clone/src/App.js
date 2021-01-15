@@ -4,7 +4,7 @@ import requests from "./requests";
 import Banner from ".//Banner";
 
 import Nav from "./Nav.js";
-import Footer from "./components/Footer";
+import Footer_2 from "./components/Footer_2";
 
 import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -40,7 +40,7 @@ function App() {
             <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
 
-            <Footer />
+            <Footer_2 />
           </Route>
         </Switch>
       </Router>
