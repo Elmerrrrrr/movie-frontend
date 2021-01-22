@@ -1,5 +1,4 @@
-
-@import './fonts.css';
+@import "./fonts.css";
 
 .nav {
   display: flex;
@@ -14,7 +13,11 @@
   transition-duration: 0.4s;
   transition-timing-function: ease;
   transition-delay: 0s;
+}
 
+.nav_logoPos {
+  display: flex;
+  align-items: center;
 }
 
 .nav_logo {
@@ -22,84 +25,215 @@
   left: 45px;
   width: 100px;
   object-fit: contain;
-  
-  
 }
-.account {
-  position: fixed;
-  right: 2.5rem;
-  width: 30px;
-  border-radius: 3px;
-  object-fit: contain;
-  margin-right: 2rem;
+.browse {
+  display: none;
+}
 
+.dropdownMenu {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  margin-right: 3.6rem;
+  min-width: 10rem;
+  display: none;
+}
+
+.dropdownAccountContent {
+  background-color: rgba(0, 0, 0, 0.89);
+  border: solid 1px gray;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-family: "Netreg";
+}
+
+.triangleUp {
+  width: 0;
+  height: 0;
+  margin-left: 146px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+
+.triangleDown {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  margin-left: 2.5rem;
+}
+
+.dropdownAccountContent a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownAccountContent div {
+  border-top: solid 1px gray;
+}
+
+.dropdownAccount:hover .dropdownMenu {
+  display: block;
 }
 
 .nav_darken {
-  background-color: #141414;;
-  
+  background-color: #141414;
 }
 
 .nav ul {
-  font-family:'Netreg';
+  font-family: "Netreg";
   font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
-  
+
   align-items: center;
-  
-  
 }
 .nav li {
-  margin-left: 15px;
+  margin-left: 20px;
   display: flex;
   cursor: pointer;
   text-decoration: none;
-  
- 
 }
-
 
 .nav_right {
   display: flex;
   align-items: center;
-  padding-right: 6rem;
   cursor: pointer;
- 
- 
-}
-
-.nav_right ul{
-  align-items: center;
-  
 }
 
 .nav_right img {
-  display: flex;
   height: 1.3rem;
-  width: 1.3rem;
- 
-  
-}
-.nav_left  {
-  display: flex;
-  align-items: center;
-  margin-left:5.8rem;
-  
-}
-.nav_left ul{
-  display: flex;
-  align-items: center;
 }
 
+.nav_right ul li img:nth-last-child(2) {
+  height: 2rem;
+}
+
+.account {
+  right: 2.5rem;
+  border-radius: 3px;
+  margin-right: 2rem;
+}
+
+input[type="search"] {
+  width: 0px;
+  border: none;
+  background-image: url("../img/Marisearch.png");
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-size: 1.2rem;
+  background-color: rgb(0, 0, 0, 0);
+  padding: 12px 0px 5px 40px;
+  padding-top: 9px;
+  transition: width 0.2s ease-in-out;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+input[type="search"]::placeholder {
+  font-size: 1rem;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  background: url(https://www.pngfind.com/pngs/m/60-609333_x-cross-png-close-icon-svg-transparent-png.png)
+    no-repeat;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+  padding-bottom: 5px;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+  opacity: 1;
+  pointer-events: all;
+}
+
+input[type="search"]:focus {
+  padding-left: 40px;
+  width: 255px;
+  background-position: 5px;
+  background-color: rgb(0, 0, 0, 0.7);
+}
+
+.nav_left {
+  display: flex;
+  align-items: center;
+  margin-left: 5.9rem;
+}
+.nav_left ul {
+  display: flex;
+  align-items: center;
+}
 
 .nav_left ul li:hover {
-  color:#b0b0b0;
+  color: #b0b0b0;
   transition: all 0.2s;
 }
+.nav_left ul :nth-child(5) {
+  display: none;
+}
 
+@media only screen and (max-width: 875px) {
+  .nav {
+    height: 41px;
+    padding: 0px;
+    justify-content: flex-end;
+  }
+  .nav_logo {
+    width: 90px;
+  }
+  .triangleDown {
+    display: none;
+  }
+  .nav_right ul li img:nth-last-child(2) {
+    height: 40px;
+  }
 
+  .nav_right ul li:nth-child(2) {
+    display: none;
+  }
 
+  .nav_left ul li {
+    display: none;
+  }
 
+  .nav_left ul :nth-child(5) {
+    display: block;
+    margin-right: 400px;
+  }
 
+  .browse {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+  }
 
+  .browseContent {
+    font-family: "Netreg";
+    z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.89);
+    padding: 12px 16px;
+    min-width: 12rem;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  .browseContent a {
+    margin-bottom: 2rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .browse:hover .browseContent {
+    display: block;
+  }
+}

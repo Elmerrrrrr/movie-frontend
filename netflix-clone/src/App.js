@@ -1,11 +1,10 @@
-import "./App.css";
+import "./css/App.css";
 import Row from "./Row";
 import requests from "./requests";
 import Banner from ".//Banner";
 
 import Nav from "./Nav.js";
 import Footer from "./components/Footer";
-
 import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

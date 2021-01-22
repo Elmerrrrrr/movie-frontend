@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import requests from "./requests";
 import "./css/Banner.css";
+import {play} from 'react-icons-kit/fa/play';
+
+const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Banner() {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState({});
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
@@ -17,6 +20,7 @@ function Banner() {
     }
     fetchData();
   }, []);
+  
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -27,8 +31,8 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
-        backdropPosition: "center center",
+        backgroundImage: `url('${base_url}${movie?.backdrop_path}')`, //optional chaining: no need to check if movie is undefined '?' saw this neat trick on stackoverflow
+        backgroundPosition: "center center",
       }}
     >
       <div className="banner_contents">
@@ -36,6 +40,7 @@ function Banner() {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner_buttons">
+          <icon icon={play}/>
           <button className="banner_button">Play</button>
           <button className="banner_button">More Info</button>
         </div>

@@ -1,11 +1,13 @@
-@import './fonts.css';
+@import "./fonts.css";
 
-.row{
-  font-family: 'Netreg';
+.row {
+  font-family: "Netreg";
   font-size: 12px;
-    color:#e5e5e5;
-    margin-left: 20px;
+  color: #e5e5e5;
+  margin-left: 20px;
+  
 }
+
 
 
 .row_posters {
@@ -18,27 +20,47 @@
 }
 
 .row_posters::-webkit-scrollbar {
-    display: none;
-    
-  }
+  display: none;
+}
 
 .row_poster {
   object-fit: contain;
   width: 120%;
   max-height: 122px;
-  margin-right:0.3rem;
-  transition: transform 450ms;
+  margin-right: 0.3rem;
+  transition: transform 250ms;
   border-radius: 5px;
 }
 
 .row_poster:hover {
-  transform: scale(1.08);
+  transform: scale(1.5);
 }
 
-.row_posterLarge{
-    max-height: 250px;
+.row_posterLarge {
+  max-height: 250px;
+ 
 }
-.row_posterLarge:hover{
-    transform: scale(1.09);
-    
+.row_posterLarge:hover {
+  transform: scale(1.5);
+}
+
+/*youtube*/
+
+.ytp-pause-overlay {
+  display: none;
+}
+.ytp-scroll-min {
+  display: none;
+}
+.ytp-watermark {
+  display: none;
+}
+.yt-uix-sessionlink {
+  display: none;
+}
+.ytp-chrome-top {
+  display: none;
+}
+.ytp-show-cards-title {
+  display: none;
 }
