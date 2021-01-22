@@ -2,7 +2,6 @@ import "./css/App.css";
 import Row from "./Row";
 import requests from "./requests";
 import Banner from ".//Banner";
-
 import Nav from "./Nav.js";
 import Footer from "./components/Footer";
 import "./css/Landingpage.css";
@@ -39,7 +38,7 @@ function App() {
             <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
 
-            <Footer />
+            <Footer/>
           </Route>
         </Switch>
       </Router>
