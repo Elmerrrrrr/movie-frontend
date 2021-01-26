@@ -6,22 +6,24 @@ import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
+  console.log(movies);
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
       return request;
+      
     }
     fetchData();
   }, [fetchUrl]);
   const youtubeOpts = {
-    height: "183px",
-    width: "325px",
+    height: "390",
+    width: "100%",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
       modestbranding: 1,
       controls: 0,
       rel: 0,
@@ -44,46 +46,26 @@ function Row({ title, fetchUrl }) {
     }
   };
 
-  const popUpContentDisplay = (classnaming) => {
-    classnaming = "";
-    if (classnaming !== "" && classnaming !== undefined) {
-      classnaming.style.display = "block";
-    }
-  };
-
   return (
     <div className="row">
       <h2>{title}</h2>
-
+      
       <div className="row_posters">
         {movies.map((movie) => (
-          <div>
-            <img
-              key={movie.id}
-              className={`row_poster ${movie.title}`}
-              src={`${base_url}${movie.backdrop_path}`}
-              alt={movie.name}
-              onMouseOver={
-                (() =>
-                  movieClicked(movie.name || movie.title || movie.orginal_name),
-                popUpContentDisplay(`row_poster ${movie.title}`))
-              }
-            />
-            <div className="Popup">
-              {trailerUrl !== "" && (
-                <YouTube videoId={trailerUrl} opts={youtubeOpts} />
-              )}
-              <div className="Popupcontent">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-              </div>
-            </div>
-          </div>
-        ))}{" "}
+          <img
+            onClick={() =>
+              movieClicked(movie.name || movie.title || movie.orginal_name)
+            }
+            key={movie.id}
+            className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.name}
+          />
+        ))}
       </div>
+      {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
     </div>
   );
 }
