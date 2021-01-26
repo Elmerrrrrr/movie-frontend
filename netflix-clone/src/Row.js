@@ -6,7 +6,7 @@ import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl, isLargeRow }) {
+function Row({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   useEffect(() => {
@@ -18,10 +18,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
   const youtubeOpts = {
-    height: "390",
-    width: "100%",
+    height: "183px",
+    width: "325px",
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
       modestbranding: 1,
       controls: 0,
       rel: 0,
@@ -44,26 +44,46 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
   };
 
+  const popUpContentDisplay = (classnaming) => {
+    classnaming = "";
+    if (classnaming !== "" && classnaming !== undefined) {
+      classnaming.style.display = "block";
+    }
+  };
+
   return (
     <div className="row">
       <h2>{title}</h2>
 
       <div className="row_posters">
         {movies.map((movie) => (
-          <img
-            onClick={() =>
-              movieClicked(movie.name || movie.title || movie.orginal_name)
-            }
-            key={movie.id}
-            className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
-            alt={movie.name}
-          />
-        ))}
+          <div>
+            <img
+              key={movie.id}
+              className={`row_poster ${movie.title}`}
+              src={`${base_url}${movie.backdrop_path}`}
+              alt={movie.name}
+              onMouseOver={
+                (() =>
+                  movieClicked(movie.name || movie.title || movie.orginal_name),
+                popUpContentDisplay(`row_poster ${movie.title}`))
+              }
+            />
+            <div className="Popup">
+              {trailerUrl !== "" && (
+                <YouTube videoId={trailerUrl} opts={youtubeOpts} />
+              )}
+              <div className="Popupcontent">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+              </div>
+            </div>
+          </div>
+        ))}{" "}
       </div>
-      {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
     </div>
   );
 }
