@@ -5,14 +5,11 @@
   font-size: 12px;
   color: #e5e5e5;
   margin-left: 20px;
-  
 }
-
-
 
 .row_posters {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 10px;
@@ -25,42 +22,27 @@
 
 .row_poster {
   object-fit: contain;
-  width: 120%;
-  max-height: 122px;
+  width: 150px;
   margin-right: 0.3rem;
   transition: transform 250ms;
   border-radius: 5px;
 }
 
-.row_poster:hover {
-  transform: scale(1.5);
+.Popup {
+  width: 325px;
+  background-color: #141414;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
-.row_posterLarge {
-  max-height: 250px;
- 
-}
-.row_posterLarge:hover {
-  transform: scale(1.5);
+.Popupcontent button {
+  width: 43px;
+  border-radius: 50%;
+  background: none;
+  border: solid 3px white;
 }
 
-/*youtube*/
-
-.ytp-pause-overlay {
-  display: none;
-}
-.ytp-scroll-min {
-  display: none;
-}
-.ytp-watermark {
-  display: none;
-}
-.yt-uix-sessionlink {
-  display: none;
-}
-.ytp-chrome-top {
-  display: none;
-}
-.ytp-show-cards-title {
-  display: none;
+.row_posters:hover .Popup {
+  background-color: brown;
 }

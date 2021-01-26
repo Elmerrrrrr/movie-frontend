@@ -19,78 +19,96 @@ function Nav() {
 
   return (
     <div className={`nav ${show && "nav_darken"}`}>
-      <div className="nav_logoPos">
-        <img
-          className="nav_logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          alt="Netflix Logo"
-        />
-      </div>
-
-      <div className="nav_left">
-        <ul>
-          <li>Home</li>
-          <li>Series</li>
-          <li>Films</li>
-          <li>New &#38; Popular</li>
-
-          <li className="browse">
+      <img
+        className="Netflix_Logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        alt="Netflix Logo"
+      />
+      <ul className="primary-navigation">
+        <li className="navigation-menu">
+          <div className="menu-trigger" href="_Blank">
             Browse
-            <div className="browseContent">
-              <a href="j">Home</a>
-              <a href="j">Series</a>
-              <a href="j">Films</a>
-              <a href="j">New &#38; Popular</a>
+            <div className="caretPos1">
+              <div className="triangleDown" href="_Blank"></div>
             </div>
-          </li>
-        </ul>
-      </div>
-
-      <div className="nav_right">
-        <ul>
-          <li>
-            <form action="" type="GET">
-              <input
-                type="search"
-                name="q"
-                placeholder="Titles, people, genres"
-              ></input>
-            </form>
-          </li>
-          <li>CHILDREN</li>
-          <li>
-            <img src={gift} alt="Gift" />
-          </li>
-          <li>
-            <img src={bell} alt="Bell" />
-          </li>
-          <li>
-            <div className="dropdownAccount">
-              <div>
-                <img
-                  className="account"
-                  src="https://pbs.twimg.com/profile_images/1165907170178695168/JLkRF8ZY_400x400.png"
-                  /* src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" */
-                  alt="Netflix avatar"
-                />
-                <div class="triangleDown"></div>
+            <div className="browseContent">
+              <div className="triangleUpPos">
+                <div className="triangleUp"></div>
               </div>
-              <div className="dropdownMenu">
-                <div class="triangleUp"></div>
-                <div className="dropdownAccountContent">
-                  <a href="j">K</a>
-                  <a href="j">Children</a>
-                  <a href="j">Manage Profiles</a>
-                  <div>
-                    <a href="j">Account</a>
-                    <a href="j">Help Centre</a>
-                    <a href="j">Sign out of NetFlix</a>
-                  </div>
+              <div className="collapsePrimary">
+                <a href="_blank">Home</a>
+                <a href="_blank">Series</a>
+                <a href="_blank">Films</a>
+                <a href="_blank">New &#38; Popular</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li className="navigation-tab">
+          <a className="current" href="_Blank">
+            Home
+          </a>
+        </li>
+        <li className="navigation-tab">
+          <a href="_Blank">Series</a>
+        </li>
+        <li className="navigation-tab">
+          <a href="_Blank">Films</a>
+        </li>
+        <li className="navigation-tab">
+          <a href="_Blank">New &#38; Popular</a>
+        </li>
+        <li className="navigation-tab">
+          <a href="_Blank">My List</a>
+        </li>
+      </ul>
+      <div className="second-navigation">
+        <div className="nav-element">
+          <form action="" type="GET">
+            <input
+              type="search"
+              name="q"
+              placeholder="Titles, people, genres"
+            ></input>
+          </form>
+        </div>
+        <div className="nav-element">
+          <a className="children" href="_Blank">
+            CHILDREN
+          </a>
+        </div>
+        <div className="nav-element">
+          <img className="navImg" src={gift} alt="Gift" />
+        </div>
+        <div className="nav-element">
+          <img className="navImg" src={bell} alt="Bell" />
+        </div>
+        <div className="nav-element">
+          <div className="account-menu-item">
+            <img
+              className="account"
+              src="https://pbs.twimg.com/profile_images/1165907170178695168/JLkRF8ZY_400x400.png"
+              /* src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" */
+              alt="Netflix avatar"
+            />
+            <div className="caretPos2">
+              <div className="triangleDown"></div>
+            </div>
+            <div className="account-dropdown-button">
+              <div className="triangleUp"></div>
+              <div className="dropdownAccountContent">
+                <a href="_Blank">You</a>
+                <a href="_Blank">Children</a>
+                <a href="_Blank">Manage Profiles</a>
+                <div>
+                  <a href="_Blank">Account</a>
+                  <a href="_Blank">Help Centre</a>
+                  <a href="_Blank">Sign out of NetFlix</a>
                 </div>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,122 +1,113 @@
 @import "./fonts.css";
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  height: 70px;
-  width: 100%;
-  padding: 25px;
   z-index: 1;
+  height: 41px;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 1, 0.65),
+    rgba(0, 0, 0, 0)
+  );
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  font-size: 1.2rem;
+  transition: background-color 0.4s;
+  font-family: "Netreg";
+  text-decoration: none;
   transition-property: background-color;
   transition-duration: 0.4s;
   transition-timing-function: ease;
   transition-delay: 0s;
 }
 
-.nav_logoPos {
-  display: flex;
-  align-items: center;
+.nav_darken {
+  background-color: #141414;
 }
 
-.nav_logo {
+.Netflix_Logo {
+  cursor: pointer;
+  margin-right: 5px;
+  vertical-align: middle;
   position: fixed;
   left: 45px;
   width: 100px;
   object-fit: contain;
 }
-.browse {
-  display: none;
+
+.primary-navigation {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  -webkit-box-align: center;
 }
 
-.dropdownMenu {
-  z-index: 1;
-  position: absolute;
-  right: 0;
-  margin-right: 3.6rem;
-  min-width: 10rem;
-  display: none;
+.primary-navigation ul {
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  padding-inline-start: 40px;
 }
 
-.dropdownAccountContent {
-  background-color: rgba(0, 0, 0, 0.89);
-  border: solid 1px gray;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  font-family: "Netreg";
-}
-
-.triangleUp {
-  width: 0;
-  height: 0;
-  margin-left: 146px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-}
-
-.triangleDown {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #fff;
-  margin-left: 2.5rem;
-}
-
-.dropdownAccountContent a {
+.current {
+  font-family: "Netbold";
   color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+  margin-left: 100px;
 }
 
-.dropdownAccountContent div {
-  border-top: solid 1px gray;
+.navigation-menu {
+  list-style-type: none;
+  margin-left: 18px;
 }
 
-.dropdownAccount:hover .dropdownMenu {
-  display: block;
+.navigation-menu li {
+  display: list-item;
+  text-align: center;
 }
 
-.nav_darken {
-  background-color: #141414;
-}
-
-.nav ul {
-  font-family: "Netreg";
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-
+.menu-trigger {
   align-items: center;
-}
-.nav li {
-  margin-left: 20px;
   display: flex;
-  cursor: pointer;
-  text-decoration: none;
+  height: 100%;
+  margin-left: 130px;
 }
 
-.nav_right {
+.menu-trigger a {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.navigation-tab {
+  display: none;
+  list-style-type: none;
+  margin-left: 18px;
+  color: #e5e5e5;
+}
+
+.second-navigation {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  flex-grow: 1;
+  justify-content: flex-end;
+  position: absolute;
+  right: 4%;
+  top: 0;
+  height: 100%;
 }
 
-.nav_right img {
-  height: 1.3rem;
+.children {
+  display: none;
 }
 
-.nav_right ul li img:nth-last-child(2) {
-  height: 2rem;
-}
-
-.account {
-  right: 2.5rem;
-  border-radius: 3px;
-  margin-right: 2rem;
+.nav-element {
+  display: block;
+  margin-right: 23px;
 }
 
 input[type="search"] {
@@ -132,6 +123,7 @@ input[type="search"] {
   transition: width 0.2s ease-in-out;
   font-size: 0.8rem;
   color: #fff;
+  cursor: pointer;
 }
 
 input[type="search"]::placeholder {
@@ -162,78 +154,140 @@ input[type="search"]:focus {
   background-color: rgb(0, 0, 0, 0.7);
 }
 
-.nav_left {
-  display: flex;
-  align-items: center;
-  margin-left: 5.9rem;
-}
-.nav_left ul {
-  display: flex;
-  align-items: center;
+.navImg {
+  height: 1.3rem;
+  cursor: pointer;
 }
 
-.nav_left ul li:hover {
-  color: #b0b0b0;
-  transition: all 0.2s;
+.account-menu-item {
+  display: flex;
 }
-.nav_left ul :nth-child(5) {
+
+.account {
+  height: 2rem;
+  cursor: pointer;
+}
+
+.caretPos1 {
+  padding-bottom: 10px;
+}
+
+.caretPos2 {
+  padding-top: 5px;
+}
+
+.triangleUpPos {
+  display: inline-block;
+  margin-right: 152px;
+  width: 100px;
+}
+
+.triangleDown {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  margin-left: 0.5rem;
+}
+
+.triangleUp {
+  margin-top: 10px;
+  width: 20px;
+  height: 0px;
+  margin-left: 120px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+
+.account-dropdown-button {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  margin-top: 25px;
+  margin-right: 1.3rem;
+  min-width: 10rem;
   display: none;
 }
 
-@media only screen and (max-width: 875px) {
+.dropdownAccountContent {
+  z-index: 1;
+  font-family: "Netreg";
+  background-color: rgba(0, 0, 0, 0.89);
+  border: solid 1px gray;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownAccountContent a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownAccountContent a:hover {
+  text-decoration: underline;
+}
+
+.collapsePrimary {
+  background-color: rgba(0, 0, 0, 0.89);
+  border: solid 1px gray;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.collapsePrimary a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.collapsePrimary a {
+  color: #fff;
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.dropdownAccountContent div {
+  border-top: solid 1px gray;
+}
+
+.account-menu-item:hover .account-dropdown-button {
+  display: block;
+}
+
+.browseContent {
+  left: 0;
+  margin-left: 122px;
+  margin-top: 210px;
+  font-family: "Netreg";
+  z-index: 1;
+  display: none;
+  position: absolute;
+}
+
+.menu-trigger:hover .browseContent {
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
   .nav {
-    height: 41px;
-    padding: 0px;
-    justify-content: flex-end;
+    height: 68px;
+    font-size: 14px;
   }
-  .nav_logo {
-    width: 90px;
-  }
-  .triangleDown {
-    display: none;
-  }
-  .nav_right ul li img:nth-last-child(2) {
-    height: 40px;
-  }
-
-  .nav_right ul li:nth-child(2) {
-    display: none;
-  }
-
-  .nav_left ul li {
-    display: none;
-  }
-
-  .nav_left ul :nth-child(5) {
-    display: block;
-    margin-right: 400px;
-  }
-
-  .browse {
-    cursor: pointer;
-    display: block;
-    position: fixed;
-  }
-
-  .browseContent {
-    font-family: "Netreg";
-    z-index: 1;
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.89);
-    padding: 12px 16px;
-    min-width: 12rem;
-    text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-  .browseContent a {
-    margin-bottom: 2rem;
-    color: #fff;
-    text-decoration: none;
+  .navigation-tab {
+    transition: color 0.4s;
     display: block;
   }
+  .menu-trigger {
+    display: none;
+  }
 
-  .browse:hover .browseContent {
+  .children {
     display: block;
   }
 }
