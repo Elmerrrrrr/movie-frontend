@@ -2,9 +2,10 @@
 
 .row {
   font-family: "Netreg";
-  font-size: 12px;
+  font-size: 1rem;
   color: #e5e5e5;
-  margin-left: 20px;
+  margin-left: 1.25rem;
+  
 }
 
 .row_posters {
@@ -22,7 +23,7 @@
 
 .row_poster {
   object-fit: contain;
-  width: 150px;
+  width: 13.4rem;
   margin-right: 0.3rem;
   transition: transform 250ms;
   border-radius: 5px;

@@ -20,7 +20,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
   const youtubeOpts = {
-    height: "390",
+    height: "390px",
     width: "100%",
     playerVars: {
       autoplay: 1,
