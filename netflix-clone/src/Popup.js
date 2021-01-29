@@ -17,9 +17,8 @@ function Popup({ movie, trailerUrl, togglePopup }) {
   }
 
   function onPlayButtonClick() {
-    
-    document.querySelector("iframe").requestFullscreen();
     setTrailerPlaying(!trailerPlaying);
+    document.querySelector("iframe").requestFullscreen();
   }
 
   
@@ -65,9 +64,24 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         </div>
 
         <div className="modal_Description">
-          <p>{truncate(movie?.overview, 650)}</p> <br/><br/>
+          <h4>Vote Average</h4>
+          <h2>{movie?.vote_average}</h2> <br/>
+          <h4>Overview</h4> <br/>
+          <p>{truncate(movie?.overview, 350)} 
+          <br/><br/>
+
+          <h5>Director</h5>
+          <h2>{movie?.director}</h2> <br/>
+
+          <h5>Length of the movie</h5>
+          <h2>{movie?.runtime} Minutes</h2>
+          
+          
+          </p> <br/>
+          <h5>Genres</h5>
           {movie.genres.map((genre) => (
             <p>{genre.name}</p>
+            
           ))}
         </div>
       </div>

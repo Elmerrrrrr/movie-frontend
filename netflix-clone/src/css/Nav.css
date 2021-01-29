@@ -293,7 +293,9 @@ input[type="search"]:focus {
   }
 }
 
-@media screen and (max-width: 7px) {
+
+@media screen and (max-width: 700px) {
+
   .second-navigation {
     display: none;
   }
