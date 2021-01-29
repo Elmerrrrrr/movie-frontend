@@ -5,10 +5,11 @@
   color: white;
   object-fit: contain;
   height: 50rem;
- 
 
+}
+iframe{
+  margin-top:-60px;
   
- 
 }
 
 .banner_overlay {
@@ -17,14 +18,14 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top,#181818,transparent 50%);
+  /* background: linear-gradient(to top,#181818,transparent 50%); */
   
 }
 
 .banner_contents {
   position: absolute;
   left: 2rem;
-  bottom: 8rem;
+  bottom: 7rem;
   user-select: none;
 }
 

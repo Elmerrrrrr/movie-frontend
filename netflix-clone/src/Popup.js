@@ -17,9 +17,8 @@ function Popup({ movie, trailerUrl, togglePopup }) {
   }
 
   function onPlayButtonClick() {
-    
-    document.querySelector("iframe").requestFullscreen();
     setTrailerPlaying(!trailerPlaying);
+    document.querySelector("iframe").requestFullscreen();
   }
 
   console.log("movie is", movie);

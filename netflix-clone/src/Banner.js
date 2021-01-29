@@ -36,8 +36,10 @@ function Banner({ fetchUrl }) {
   }, [fetchUrl]);
 
   function onPlayButtonClick() {
-    document.querySelector("iframe").requestFullscreen();
     setTrailerPlaying(!trailerPlaying);
+    if (trailerPlaying === false) {
+      document.querySelector("iframe").requestFullscreen();
+    }
   }
 
   function onMoreInfoClick() {
@@ -50,10 +52,6 @@ function Banner({ fetchUrl }) {
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
-
-  const videoStyle = {
-    paddingTop: "-20px",
-  };
 
   return (
     <header
@@ -71,8 +69,7 @@ function Banner({ fetchUrl }) {
             muted={false}
             controls={false}
             width="100%"
-            height="100%"
-            style={videoStyle}
+            height="108%"
             playing={trailerPlaying}
             url={trailerUrl + "?t=10"}
             onError={(notfound) => (notfound.target.style.display = "none")}
