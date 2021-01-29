@@ -4,7 +4,11 @@
   position: relative;
   color: white;
   object-fit: contain;
-  height: 40rem;
+  height: 50rem;
+ 
+
+  
+ 
 }
 
 .banner_overlay {
@@ -13,6 +17,8 @@
   top: 0;
   right: 0;
   bottom: 0;
+  background: linear-gradient(to top,#181818,transparent 50%);
+  
 }
 
 .banner_contents {

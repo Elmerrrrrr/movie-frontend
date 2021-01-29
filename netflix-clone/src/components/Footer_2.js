@@ -20,7 +20,7 @@ class Footer extends Component {
   render() {
     return (
       
-      <div class="footer2">
+      <div className="footer2">
         <div className="social_links">
           <a href="https://www.facebook.com/NetflixNederland" target="_blank"rel="noreferrer"><img src={facebook} alt="FB"/></a>
           <a href="instagram.com/NetflixNL/" target="_blank"rel="noreferrer"><img src={instagram} alt="INST"/></a>
@@ -56,7 +56,7 @@ class Footer extends Component {
           <a href="ok">Corporate Information</a>
         </div>
         </div>
-        <button class="service_Btn">Service Code</button>
+        <button className="service_Btn">Service Code</button>
         <div className="Copyright">&#169; 1997-2021 Netflix, Inc.</div>
       </div>
     );
