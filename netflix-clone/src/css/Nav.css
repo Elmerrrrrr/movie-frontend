@@ -242,6 +242,7 @@ input[type="search"]:focus {
 
 .collapsePrimary a:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.6;
 }
 
 .collapsePrimary a {
@@ -291,3 +292,11 @@ input[type="search"]:focus {
     display: block;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .second-navigation {
+    display: none;
+  }
+}
+
+
