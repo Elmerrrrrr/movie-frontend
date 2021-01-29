@@ -3,7 +3,7 @@ import Row from "./Row";
 import requests from "./requests-3";
 import Banner from "./Banner";
 import Nav from "./Nav.js";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer_2";
 import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -22,23 +22,15 @@ function App() {
           <Route path="/home">
             <Nav />
 
-            <Banner />
+            <Banner fetchUrl={requests.fetchComedyMovies} />
 
-            {/* <Row
-              title="Netflix Originals"
-              fetchUrl={requests.fetchNetflixOriginals}
-              isLargeRow
-            /> */}
-
-            {/* <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-            <Row title="Top Rated" fetchUrl={requests.fetchTopRated} /> */}
             <Row title="Action" fetchUrl={requests.fetchActionMovies} />
             <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />
             <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
             <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
 
-            <Footer/>
+            <Footer />
           </Route>
         </Switch>
       </Router>
