@@ -1,42 +1,35 @@
 @import "./fonts.css";
 
-.footer2{
+.footer2 {
   display: flex;
   flex-direction: column;
   max-width: 980px;
-  margin:20px auto 0;
-  padding:0 4%;
+  margin: 20px auto 0;
+  padding: 0 4%;
   text-decoration: none;
-  
 }
-.social_links  {
 
+.social_links {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 12rem;
-  
-
 }
 
 .social_links a img {
   object-fit: contain;
-  height:1.6rem;
-  margin:5rem 0rem 0.5rem;
- 
-  
- 
+  height: 1.6rem;
+  margin: 5rem 0rem 0.5rem;
 }
 
-.textblock_container{ 
+.textblock_container {
   display: flex;
   justify-content: space-between;
 }
+
 .textblock {
   overflow: hidden;
-  
   display: inline;
-
 }
 
 .textblock a {
@@ -44,35 +37,41 @@
   font-family: "Netreg";
   color: #808080;
   font-size: 0.85rem;
-  margin-bottom:0.8rem;
-  
- 
+  margin-bottom: 0.8rem;
 }
 
-.service_Btn{
+.service_Btn {
   margin: 1rem 0rem 1rem;
   font-family: "Netreg";
-  color:  #808080;;
+  color: #808080;
   font-size: 0.8rem;
-  padding:0.4rem 0rem 0.5rem; ; 
-  width:6rem;
+  padding: 0.4rem 0rem 0.5rem;
+  width: 6rem;
   border: solid 1px #808080;
   cursor: pointer;
-  background:none;
-  
+  background: none;
 }
 
 .service_Btn:hover {
   color: #fff;
 }
+
 .Copyright {
   margin: 0rem 0rem 1rem;
   font-family: "Netreg";
   font-size: 0.8rem;
   color: #808080;
-  
 }
 
 @media screen and (min-width: 1200px) {
-  
+}
+.textblock_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media only screen and (max-width: 800px) {
+  .textblock_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

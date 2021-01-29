@@ -22,8 +22,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
     setTrailerPlaying(!trailerPlaying);
   }
 
-  console.log("movie is", movie);
-
+  
   return (
     <div className="modalBg">
       <div className="videomodal">
@@ -66,7 +65,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         </div>
 
         <div className="modal_Description">
-          <p>{truncate(movie?.overview, 650)}</p>
+          <p>{truncate(movie?.overview, 650)}</p> <br/><br/>
           {movie.genres.map((genre) => (
             <p>{genre.name}</p>
           ))}
