@@ -103,3 +103,8 @@ iframe{
     margin-left: 2rem;
   }
 }
+
+.hide-play-button {
+  opacity: 0;
+
+}

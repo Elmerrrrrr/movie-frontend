@@ -71,7 +71,7 @@ function Banner({ fetchUrl }) {
             width="100%"
             height="108%"
             playing={trailerPlaying}
-            url={trailerUrl + "?t=10"}
+            url={trailerUrl + "?t=10"} className="hide-play-button"
             onError={(notfound) => (notfound.target.style.display = "none")}
           />
           <div className="banner_overlay">
