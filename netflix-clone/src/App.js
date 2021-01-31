@@ -6,8 +6,8 @@ import Nav from "./Nav.js";
 import Footer from "./components/Footer_2";
 import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Main from "./pages/Landingpage";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
-
+          <Route path="/login" component={Login} />
           {/* From here it is the main page with all the video content */}
 
           <Route path="/home">
