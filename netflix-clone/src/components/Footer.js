@@ -131,6 +131,7 @@ const FooterContainer = styled.footer`
   padding-top: 10rem;
   padding-bottom: 3rem;
   color: #999;
+  z-index: 100;
 
   .footer-container {
     max-width: 980px;

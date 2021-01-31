@@ -8,16 +8,16 @@ import LoginFooter from '../components/LoginFooter';
 class Login extends Component {
     render() {
         return (
-            <div>
+            
             <div className="main-login-container">
                 <div className="header-top">
                     <Logo src={logo} alt="logo" className="" />
                 </div>
                 <LoginForm />
+                <LoginFooter />
             </div>
             
-            <LoginFooter />
-            </div>
+            
         )
     }
 }
@@ -32,14 +32,13 @@ const customMedia = generateMedia({
   
 
 //logo
-
 const Logo = styled.img`
 width: 11rem;
 position: absolute;
 top: 25%;
 left: 11%;
 transform: translate (-50%, -50%);
-margiin-left; 0;
+margin-left; 0;
 ${customMedia.lessThan("tablet")`
 top: 45%;
 left: 23%;

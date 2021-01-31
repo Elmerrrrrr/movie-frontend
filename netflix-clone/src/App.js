@@ -17,8 +17,8 @@ function App() {
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
           <Route path="/login" component={Login} />
-          {/* From here it is the main page with all the video content */}
 
+          {/* From here it is the main page with all the video content */}
           <Route path="/home">
             <Nav />
 
@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App;
+

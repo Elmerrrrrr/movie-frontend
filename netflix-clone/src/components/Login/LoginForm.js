@@ -119,11 +119,13 @@ class LoginForm extends Component {
             </div>
 
             <div className="input-container">
-                {/* <Link to= {"/home"}></Link> */}
+               
+              {/* TODO push to home page on click */}
               <Button type="submit" onClick={(e) => this.onSubmit(e)}>
                 Sign In
               </Button>
               
+
             </div>
 
             <label className="checkbox-container">
@@ -172,8 +174,9 @@ display: grid;
 justify-content: center;
 position: relative;
 z-index: 5;
+margin-bottom: 1.25rem;
 ${customMedia.lessThan("tablet")`
-border-bottom: 0.9px soliid #999;
+border-bottom: 0.9px solid #999;
 `}
 
 
@@ -211,7 +214,7 @@ form div label {
     poiner-events: none;
     color: #8a8a8a;
     font-size: 1rem;
-    transition:transform 150ms ease-out, font-size 150ms ease-out;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
 
 form div{
