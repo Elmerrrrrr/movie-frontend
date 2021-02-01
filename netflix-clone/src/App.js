@@ -8,7 +8,10 @@ import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/Landingpage";
 import Login from "./pages/Login";
+import Film from "./pages/Film";
+import Discover from "./pages/Discover";
 import history from './history';
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
+
+           {/* This is the logingpage */}
           <Route path="/login" component={Login} />
 
           {/* From here it is the main page with all the video content */}
@@ -33,6 +38,15 @@ function App() {
 
             <Footer />
           </Route>
+
+           {/* This is the Discover page */}
+           <Route path="/discover" component={Discover} />
+
+
+            {/* This is the Film page */}
+          <Route path="/film" component={Film} />
+
+
         </Switch>
       </Router>
     </div>
