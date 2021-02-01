@@ -8,11 +8,12 @@ import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/Landingpage";
 import Login from "./pages/Login";
+import history from './history';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router history={history}>
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />

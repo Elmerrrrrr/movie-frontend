@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
 import { Link } from "react-router-dom";
 import FBlogo from "../../images/fb-logo.png";
+import history from '../../history';
 
 
 const regexp = RegExp(
@@ -31,6 +32,7 @@ class LoginForm extends Component {
       password: e.target.value,
     });
   };
+
   // Validate
   validate = () => {
     let inputError = false;
@@ -70,6 +72,8 @@ class LoginForm extends Component {
       this.setState(initState);
     }
   };
+      
+
 
   //checkbox
   handlerCheckbox = (e) => {
@@ -121,7 +125,7 @@ class LoginForm extends Component {
             <div className="input-container">
                
               {/* TODO push to home page on click */}
-              <Button type="submit" onClick={(e) => this.onSubmit(e)}>
+              <Button type="submit" onClick={(e) => history.push('/home')}>
                 Sign In
               </Button>
               
