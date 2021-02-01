@@ -6,7 +6,7 @@ import { iosWorld } from "react-icons-kit/ionicons/iosWorld";
 import { arrowSortedDown } from "react-icons-kit/typicons/arrowSortedDown";
 import { generateMedia } from "styled-media-query";
 
-class Footer extends Component {
+class LoginFooter extends Component {
   state = {
     langContent: false,
   };
@@ -31,63 +31,28 @@ class Footer extends Component {
               <li>
                 <Link>FAQ</Link>
               </li>
-              <li>
-                <Link>Investor Relations</Link>
-              </li>
-              <li>
-                <Link>Ways to Watch</Link>
-              </li>
-              <li>
-                <Link>Corporate Information</Link>
-              </li>
-              <li>
-                <Link>Netflix Originals</Link>
-              </li>
+              
             </ul>
             {/* second column */}
             <ul>
               <li>
                 <Link>Help Center</Link>
               </li>
-              <li>
-                <Link>Jobs</Link>
-              </li>
-              <li>
-                <Link>Terms of Use</Link>
-              </li>
-              <li>
-                <Link>Contact Us</Link>
-              </li>
+              
             </ul>
             {/* third column */}
             <ul>
               <li>
                 <Link>Account</Link>
               </li>
-              <li>
-                <Link>Redeem Gift Cards</Link>
-              </li>
-              <li>
-                <Link>Privacy</Link>
-              </li>
-              <li>
-                <Link>Speed Test</Link>
-              </li>
+              
             </ul>
             {/* fourth column */}
             <ul>
               <li>
                 <Link>Media Center</Link>
               </li>
-              <li>
-                <Link>Buy Gift Cards</Link>
-              </li>
-              <li>
-                <Link>Cookie Preferences</Link>
-              </li>
-              <li>
-                <Link>Legal Notice</Link>
-              </li>
+              
             </ul>
 
             {/* Language Button */}
@@ -118,7 +83,7 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default LoginFooter;
 
 // Media
 const customMedia = generateMedia({
@@ -127,16 +92,19 @@ const customMedia = generateMedia({
 });
 
 const FooterContainer = styled.footer`
-  background: var(--main-deep-dark);
-  padding-top: 10rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 2rem;
+  position: relative;
   padding-bottom: 3rem;
   color: #999;
-  z-index: 100;
+  z-index: 5;
+  border-top: 2px solid  var(--main-red-hover);
 
   .footer-container {
     max-width: 980px;
     margin: 20px auto 0;
     padding: 0 4%;
+    
   }
 
   .questions {
