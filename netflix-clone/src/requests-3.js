@@ -1,4 +1,5 @@
 const requests = {
+  fetchRandomMovie: `/movies/random`, // need backend V1.3 for this
   fetchIntroBanner: `/movies/introBanner`,
   fetchDocumentaries: `/movies/genre/99`,
   fetchRomanceMovies: `/movies/genre/10749`,
