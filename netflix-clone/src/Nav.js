@@ -36,16 +36,16 @@ function Nav() {
                 <div className="triangleUp"></div>
               </div>
               <div className="collapsePrimary">
-                <a href="_blank">Home</a>
+                <a href="/">Home</a>
                 <a href="_blank">Series</a>
-                <a href="_blank">Films</a>
-                <a href="_blank">New &#38; Popular</a>
+                <a href="/film">Films</a>
+                <a href="/discover">Discover</a>
               </div>
             </div>
           </div>
         </li>
         <li className="navigation-tab">
-          <a className="current" href="_Blank">
+          <a className="current" href="/home">
             Home
           </a>
         </li>
@@ -53,10 +53,10 @@ function Nav() {
           <a href="_Blank">Series</a>
         </li>
         <li className="navigation-tab">
-          <a href="_Blank">Films</a>
+          <a href="/films">Films</a>
         </li>
         <li className="navigation-tab">
-          <a href="_Blank">New &#38; Popular</a>
+          <a href="/discover">Discover</a>
         </li>
         <li className="navigation-tab">
           <a href="_Blank">My List</a>
