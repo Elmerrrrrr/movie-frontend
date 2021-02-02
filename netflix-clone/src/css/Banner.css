@@ -107,3 +107,17 @@ iframe{
 .hide-play-button {
   opacity: 0;
 }
+
+.banner-poster {
+  position: absolute;
+  z-index: 5;
+  top: -250px;
+  padding: 0.125rem;
+  
+}
+
+.banner-img {
+  max-width: 250px;
+  height: auto;
+
+}

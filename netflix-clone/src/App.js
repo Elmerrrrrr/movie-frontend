@@ -23,7 +23,7 @@ function App() {
           <Route path="/home">
             <Nav />
 
-            <Banner fetchUrl={requests.fetchTopRated} />
+            <Banner />
 
             <Row title="Action" fetchUrl={requests.fetchActionMovies} />
             <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />
