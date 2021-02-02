@@ -7,7 +7,8 @@ const requests = {
   fetchComedyMovies: `/movies/genre/35`,
   fetchTopRated: `/movies/toprated/1`,
   fetchMovieDetails: `/movie/details/`, 
-  fetchRandom: `/movie/random/`
+  fetchRandom: `/movie/random/`,
+  fetchDisney: `/movies/company/6125`
 
   
 };
