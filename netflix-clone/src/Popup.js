@@ -37,6 +37,8 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         />
       </div>
 
+      
+
       {/* buttons and icons */}
       <div className="modal_info">
         <button className="CloseBtn" onClick={togglePopup}>
