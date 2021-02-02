@@ -7,7 +7,9 @@ const requests = {
   fetchActionMovies: `/movies/genre/28`,
   fetchComedyMovies: `/movies/genre/35`,
   fetchTopRated: `/movies/toprated/1`,
-  fetchMovieDetails: `/movie/details`, //  info popup /movie/details/(id) movie id prop geven, dynamisch maken
+  fetchMovieDetails: `/movie/details/`, 
+  fetchRandom: `/movie/random/`,
+  fetchDisney: `/movies/company/6125`
 
   
 };

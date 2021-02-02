@@ -20,7 +20,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
     setTrailerPlaying(!trailerPlaying);
     document.querySelector("iframe").requestFullscreen();
   }
-
+  
   
   return (
     <div className="modalBg">
@@ -37,6 +37,9 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         />
       </div>
 
+      
+
+      {/* buttons and icons */}
       <div className="modal_info">
         <button className="CloseBtn" onClick={togglePopup}>
           {" "}
@@ -63,29 +66,66 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           </button>
         </div>
 
+        {/* movie information */}
         <div className="modal_Description">
-          <h4>Vote Average</h4>
-          <h2>{movie?.vote_average}</h2> <br/>
-          <h4>Overview</h4> <br/>
-          <p>{truncate(movie?.overview, 350)} 
-          <br/><br/>
+          <div className="length-director-overview">    
+            <h4>Vote Average</h4>
+            <h2>{movie?.vote_average}</h2> <br/>
 
-          <h5>Director</h5>
-          <h2>{movie?.director}</h2> <br/>
-
-          <h5>Length of the movie</h5>
-          <h2>{movie?.runtime} Minutes</h2>
-          
-          
-          </p> <br/>
-          <h5>Genres</h5>
-          {movie.genres.map((genre) => (
-            <p>{genre.name}</p>
+            <h4>Overview</h4>
+            <p>{truncate(movie?.overview, 250)}</p>
+            <br/>
             
-          ))}
+            <h5>Director</h5>
+            <h4>{movie?.director}</h4> <br/>
+
+            <h4>Length of the movie</h4>
+            <h4>{movie?.runtime} Minutes</h4>
+
+           <img className="movie-logo" src={movie?.movie_logo_urls.movielogos[0].url_hd} alt="logo"/>
+
+          </div>
+            
+
+            
+            
+          <div className="cast-genres">   
+            <h5>Cast</h5>
+            {/* hard coded for now, this is not the way to do it.. data is coming in */}
+            <p>{movie?.cast[0].name}</p>
+            <p>{movie?.cast[1].name}</p>
+            <p>{movie?.cast[2].name}</p>
+              <br/>
+            <h5>Genres</h5>
+            {movie.genres.map((genre) => (
+              <p>{genre.name}</p>
+              
+            ))}
+          </div>
+
         </div>
       </div>
     </div>
   );
 }
 export default Popup;
+
+            
+            
+            
+            
+
+
+
+
+
+
+          
+
+          
+          
+
+            
+
+
+           

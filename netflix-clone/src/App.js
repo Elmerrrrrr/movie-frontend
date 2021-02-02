@@ -28,13 +28,14 @@ function App() {
           <Route path="/home">
             <Nav />
 
-            <Banner fetchUrl={requests.fetchTopRated} />
+            <Banner />
 
             <Row title="Action" fetchUrl={requests.fetchActionMovies} />
             <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />
             <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
             <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+            <Row title="Disney Movies" fetchUrl={requests.fetchDisney} />
 
             <Footer />
           </Route>

@@ -11,37 +11,38 @@ import Popup from "./Popup";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Banner({ fetchUrl }) {
-  const [trailerPlaying, setTrailerPlaying] = useState(false);
+  const [trailerPlaying, setTrailerPlaying] = useState(true);
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl);
-      const randomMovie =
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ];
 
-      const movieDetails = await axios.get(
-        requests.fetchMovieDetails + "/" + randomMovie.id
+      const randomMovie = await axios.get(
+        requests.fetchRandom
       );
 
-      setTrailerUrl("https://youtube.com/watch?v=" + movieDetails.data.trailer);
-      setMovie(movieDetails.data);
+      setTrailerUrl("https://youtube.com/watch?v=" + randomMovie.data.trailer);
+      setMovie(randomMovie.data);
     }
 
-    fetchData();
+    fetchData()
+    .catch(e => {
+      console.log("I am afraid there is a slight problem with the fetch operation: " + e.message)
+    })
+    
   }, [fetchUrl]);
+  
 
+  
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
-    if (trailerPlaying === false) {
-      document.querySelector("iframe").requestFullscreen();
-    }
+    document.querySelector("iframe").requestFullscreen();
+  
   }
-
+    
   function onMoreInfoClick() {
     setShowPopup(!showPopup);
     if (trailerPlaying === true) {
@@ -53,6 +54,7 @@ function Banner({ fetchUrl }) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
+  
   return (
     <header
       className="banner"
@@ -66,8 +68,9 @@ function Banner({ fetchUrl }) {
         <>
           <ReactPlayer
             volume={1}
-            muted={false}
+            muted={true}
             controls={false}
+            light={false}
             width="100%"
             height="108%"
             playing={trailerPlaying}
@@ -75,7 +78,16 @@ function Banner({ fetchUrl }) {
             onError={(notfound) => (notfound.target.style.display = "none")}
           />
           <div className="banner_overlay">
+
+            <h2 id="error_message"></h2>
+
             <div className="banner_contents">
+
+              <div className="banner-poster">  
+                <img className="banner-img" src= {`${base_url}${movie?.production_company[0].logo_path}`} alt="poster"/>
+               
+              </div>
+
               <h1 className="banner_title">
                 {movie?.title || movie?.name || movie?.original_name}
               </h1>
@@ -110,3 +122,7 @@ function Banner({ fetchUrl }) {
 }
 
 export default Banner;
+      
+      
+      
+
