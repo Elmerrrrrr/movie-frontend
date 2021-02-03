@@ -92,10 +92,12 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           <div className="cast-genres">   
             <h5>Cast</h5>
             {/* hard coded for now, this is not the way to do it.. data is coming in */}
-            <p>{movie?.cast[0].name}</p>
-            <p>{movie?.cast[1].name}</p>
-            <p>{movie?.cast[2].name}</p>
-              <br/>
+            {movie.cast.map((actor) => (
+              <p>{actor.name} {"as: "} {actor.character}</p>
+              
+            ))}
+            
+            <br/>
             <h5>Genres</h5>
             {movie.genres.map((genre) => (
               <p>{genre.name}</p>
