@@ -84,8 +84,8 @@ function Banner({ fetchUrl }) {
             <div className="banner_contents">
 
               <div className="banner-poster">  
-                <img className="banner-img" src= {`${base_url}${movie?.production_company[0].logo_path}`} alt="poster"/>
-               
+                <img className="banner-img" src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="poster"/>
+
               </div>
 
               <h1 className="banner_title">
