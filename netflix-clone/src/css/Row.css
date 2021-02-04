@@ -4,9 +4,26 @@
   font-family: "Netreg";
   font-size: 1rem;
   color: #e5e5e5;
+  margin-top: 1rem;
+}
+
+h2 {
   margin-left: 1.25rem;
-  margin-top:1rem;
-  
+}
+
+.arrows {
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.5rem;
+  padding-right: 3rem;
+  z-index: 10;
+}
+
+.row:hover .arrows {
+  display: flex;
 }
 
 .row_posters {

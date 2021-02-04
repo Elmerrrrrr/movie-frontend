@@ -6,15 +6,13 @@ import { play } from "react-icons-kit/fa/play";
 import { info } from "react-icons-kit/icomoon/info";
 import ReactPlayer from "react-player";
 import requests from "./requests-3";
-import Popup from "./Popup";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Banner({ fetchUrl }) {
+function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
   const [trailerPlaying, setTrailerPlaying] = useState(false);
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +41,8 @@ function Banner({ fetchUrl }) {
   }
 
   function onMoreInfoClick() {
-    setShowPopup(!showPopup);
+    setPopupTrailerUrl(trailerUrl);
+    setPopupMovie(movie);
     if (trailerPlaying === true) {
       setTrailerPlaying(!trailerPlaying);
     }
@@ -65,17 +64,23 @@ function Banner({ fetchUrl }) {
       {trailerUrl && (
         <>
           <ReactPlayer
+            className="darkFather"
             volume={1}
             muted={false}
             controls={false}
             width="100%"
             height="108%"
             playing={trailerPlaying}
-            url={trailerUrl + "?t=10"}
+            url={trailerUrl}
             onError={(notfound) => (notfound.target.style.display = "none")}
           />
           <div className="banner_overlay">
             <div className="banner_contents">
+              <img
+                className="banner-img"
+                //src={`${base_url}${movie?.production_companies[0].logo_path}`}
+                alt="poster"
+              />
               <h1 className="banner_title">
                 {movie?.title || movie?.name || movie?.original_name}
               </h1>
@@ -93,15 +98,6 @@ function Banner({ fetchUrl }) {
                 </button>
               </div>
             </div>
-
-            {/* //popup// */}
-            {showPopup && (
-              <Popup
-                movie={movie}
-                trailerUrl={trailerUrl}
-                togglePopup={onMoreInfoClick}
-              />
-            )}
           </div>
         </>
       )}

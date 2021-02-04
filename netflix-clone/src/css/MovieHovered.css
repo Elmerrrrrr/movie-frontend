@@ -1,0 +1,60 @@
+.movie-hover-container {
+  position: absolute;
+  background-color: #181818;
+  width: 13rem;
+  height: 14rem;
+  margin-left: 2.5rem;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.movie-hover-container:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s;
+}
+
+@keyframes OpacitySlider {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.trailer-container {
+  padding-top: 3.5rem;
+  width: 100%;
+  animation: 2s ease-out 0s 1 OpacitySlider;
+}
+
+.button-container {
+  margin-top: -3.5rem;
+}
+
+.RowPlay {
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  outline: none;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+.RowBtn {
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(42, 42, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+  border: solid 1px #fff;
+  border-radius: 50%;
+  outline: none;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+.sizeBtns {
+  transform: scale(0.8);
+}

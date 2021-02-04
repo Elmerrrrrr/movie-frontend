@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { thumbsUp } from "react-icons-kit/feather/thumbsUp";
 import { thumbsDown } from "react-icons-kit/feather/thumbsDown";
@@ -12,25 +12,36 @@ import "./css/Popup.css";
 function Popup({ movie, trailerUrl, togglePopup }) {
   const [trailerPlaying, setTrailerPlaying] = useState(false);
 
+  useEffect(() => {
+    document.body.style.position = "absolute";
+    document.body.style.overflow = "hidden";
+    document.body.style.width = "100%";
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.overflow = "";
+      document.body.style.width = "";
+    };
+  }, []);
+
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
-    document.querySelector("iframe").requestFullscreen();
+    if (trailerPlaying === false) {
+      document.querySelector("iframe").requestFullscreen();
+    }
   }
-
-  console.log("movie is", movie);
 
   return (
     <div className="modalBg">
       <div className="videomodal">
         <ReactPlayer
           volume={1}
-          muted={true}
+          muted={false}
           controls={false}
-          light={true}
           width="50%"
           height="60%"
           playing={trailerPlaying}
@@ -60,18 +71,19 @@ function Popup({ movie, trailerUrl, togglePopup }) {
             </button>
           </div>
           <button className="RoundBtn">
-            <Icon ClassName="Mute" icon={music_mute} />
+            <Icon className="Mute" icon={music_mute} />
           </button>
         </div>
 
         <div className="modal_Description">
           <p>{truncate(movie?.overview, 650)}</p>
-          {movie.genres.map((genre) => (
-            <p>{genre.name}</p>
+          {movie?.genres?.map((genre) => (
+            <p key={Math.random()}>{genre.name}</p>
           ))}
         </div>
       </div>
     </div>
   );
 }
+
 export default Popup;

@@ -3,13 +3,24 @@
 .banner {
   position: relative;
   color: white;
-  object-fit: contain;
   height: 50rem;
-
 }
-iframe{
-  margin-top:-60px;
-  
+
+@keyframes OpacitySlider {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.darkFather {
+  animation: 2s ease-in-out 0s 1 OpacitySlider;
+}
+
+iframe {
+  margin-top: -60px;
 }
 
 .banner_overlay {
@@ -19,7 +30,6 @@ iframe{
   right: 0;
   bottom: 0;
   /* background: linear-gradient(to top,#181818,transparent 50%); */
-  
 }
 
 .banner_contents {
@@ -89,8 +99,6 @@ iframe{
   margin-left: 0.5rem;
   margin-right: 0.7rem;
 }
-
-
 
 /*--responsive--*/
 

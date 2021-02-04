@@ -1,13 +1,10 @@
 import "./css/App.css";
-import Row from "./Row";
-import requests from "./requests-3";
-import Banner from "./Banner";
-import Nav from "./Nav.js";
-import Footer from "./components/Footer_2";
 import "./css/Landingpage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Main from "./pages/Landingpage";
+import HomeComponent from "./HomeComponent";
+import FilmsComponent from "./FilmsComponent";
 
 function App() {
   return (
@@ -19,18 +16,12 @@ function App() {
 
           {/* From here it is the main page with all the video content */}
 
+          <Route path="/films">
+            <FilmsComponent />
+          </Route>
+
           <Route path="/home">
-            <Nav />
-
-            <Banner fetchUrl={requests.fetchComedyMovies} />
-
-            <Row title="Action" fetchUrl={requests.fetchActionMovies} />
-            <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />
-            <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
-            <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
-            <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-
-            <Footer />
+            <HomeComponent />
           </Route>
         </Switch>
       </Router>
