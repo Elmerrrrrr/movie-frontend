@@ -14,40 +14,20 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const randomMovie = await axios.get(requests.fetchRandomMovie);
-
-  //     setTrailerUrl("https://youtube.com/watch?v=" + randomMovie.data.trailer);
-  //     setMovie(randomMovie.data);
-  //   }
-
-  //   fetchData().catch((e) => {
-  //     console.log(
-  //       "I am afraid there is a slight problem with the fetch operation: " +
-  //         e.message
-  //     );
-  //   });
-  // }, [fetchUrl]);
-  
+ 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-      const randomMovie =
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ];
 
-      const movieDetails = await axios.get(
-        requests.fetchMovieDetails + "/" + randomMovie.id
-      );
-
-      setTrailerUrl("https://youtube.com/watch?v=" + movieDetails.data.trailer);
-      setMovie(movieDetails.data);
+      setTrailerUrl("https://youtube.com/watch?v=" + request.data.trailer);
+      setMovie(request.data);
     }
-
+    
     fetchData();
   }, [fetchUrl]);
+
+
+
 
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
