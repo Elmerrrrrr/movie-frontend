@@ -27,7 +27,7 @@ function HomeComponent() {
       )}
       <Banner
         title="Random"
-        fetchUrl={requests.fetchRandomMovie}
+        fetchUrl={fetchRandomMovie}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
