@@ -20,11 +20,11 @@ function App() {
             <DiscoverComponent />
           </Route>
 
-          <Route path="/films">
+          <Route path="/Films">
             <FilmsComponent />
           </Route>
 
-          <Route path="/home">
+          <Route path="/Home">
             <HomeComponent />
           </Route>
         </Switch>
