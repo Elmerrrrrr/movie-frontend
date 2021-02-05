@@ -76,9 +76,27 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         </div>
 
         <div className="modal_Description">
+          <h4>Vote Average</h4>
+          <h2>{movie?.vote_average}</h2>
           <p>{truncate(movie?.overview, 650)}</p>
-          {movie?.genres?.map((genre) => (
-            <p key={Math.random()}>{genre.name}</p>
+          <h5>Director</h5>
+          <h4>{movie?.director}</h4>
+          <h4>Length of the movie</h4>
+          <h4>{movie?.runtime} Minutes</h4>
+          <img
+            className="movie-logo"
+            src={movie?.movie_logo_urls.movielogos[0].url_hd}
+            alt="logo"
+          />
+          <h5>Cast</h5>
+          {movie.cast.map((actor) => (
+              <p>{actor.name} {"as: "} {actor.character}</p>
+
+            ))}
+
+          <h5>Genres</h5>
+          {movie.genres.map((genre) => (
+            <p>{genre.name}</p>
           ))}
         </div>
       </div>

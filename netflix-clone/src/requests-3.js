@@ -16,9 +16,7 @@ const requests = {
   fetchFamilyMovies: `/movies/genre/10751`,
   fetchFantasyMovies: `/movies/genre/14`,
   fetchCrimeMovies: `/movies/genre/80`,
-
-  // fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
-  //fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
+  fetchRandomMovie: `/movies/random`,// need backend V1.3 for this
 };
 
 export default requests;

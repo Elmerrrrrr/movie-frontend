@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/Landingpage";
 import HomeComponent from "./HomeComponent";
 import FilmsComponent from "./FilmsComponent";
+import DiscoverComponent from "./DiscoverComponent";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <Route path="/" exact component={() => <Main />} />
 
           {/* From here it is the main page with all the video content */}
+          <Route path="/Discover">
+            <DiscoverComponent />
+          </Route>
 
           <Route path="/films">
             <FilmsComponent />

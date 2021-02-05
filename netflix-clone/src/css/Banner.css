@@ -15,8 +15,8 @@
   }
 }
 
-.darkFather {
-  animation: 2s ease-in-out 0s 1 OpacitySlider;
+.HideBannerVid {
+  opacity: 0;
 }
 
 iframe {
@@ -29,7 +29,6 @@ iframe {
   top: 0;
   right: 0;
   bottom: 0;
-  /* background: linear-gradient(to top,#181818,transparent 50%); */
 }
 
 .banner_contents {

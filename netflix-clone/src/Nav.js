@@ -42,7 +42,7 @@ function Nav() {
                 <a href="/home">Home</a>
                 <a href="_blank">Series</a>
                 <a href="/films">Films</a>
-                <a href="_blank">New &#38; Popular</a>
+                <a href="/discover">Discover</a>
               </div>
             </div>
           </div>
@@ -67,7 +67,12 @@ function Nav() {
           </a>
         </li>
         <li className="navigation-tab">
-          <a href="_Blank">New &#38; Popular</a>
+          <a
+            className={location.pathname === "/discover" ? "active" : ""}
+            href="/discover"
+          >
+            Discover
+          </a>
         </li>
         <li className="navigation-tab">
           <a href="_Blank">My List</a>
