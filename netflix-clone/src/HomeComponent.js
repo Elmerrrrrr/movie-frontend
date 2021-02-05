@@ -51,7 +51,7 @@ function HomeComponent() {
       />
       <Row
         title="Disney"
-        fetchUrl={requests.fetchDisneyMovies}
+        fetchUrl={requests.fetchDisney}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />

@@ -5,18 +5,12 @@ import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import MovieHover from "./MovieHover";
 import Icon from "react-icons-kit";
-import { chevronLeft } from "react-icons-kit/fa/chevronLeft";
-import { chevronRight } from "react-icons-kit/fa/chevronRight";
+import { chevronLeft } from "react-icons-kit/ionicons/chevronLeft";
+import { chevronRight } from "react-icons-kit/ionicons/chevronRight";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({
-  title,
-  fetchUrl,
-  isLargeRow,
-  setPopupMovie,
-  setPopupTrailerUrl,
-}) {
+function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [hoveredMovieDetails, setHoveredMovieDetails] = useState(null);
@@ -99,11 +93,11 @@ function Row({
     <div className="row">
       <h2>{title}</h2>
       <div className="arrows">
-        <button onClick={() => previous()}>
-          <Icon className="size" icon={chevronLeft} />
+        <button className="size" onClick={() => previous()}>
+          <Icon className="leftclick" icon={chevronLeft} />
         </button>
-        <button onClick={() => next()}>
-          <Icon className="size" icon={chevronRight} />
+        <button className="size" onClick={() => next()}>
+          <Icon className="rightclick" icon={chevronRight} />
         </button>
       </div>
 
@@ -115,15 +109,14 @@ function Row({
               movieClicked(movie.name || movie.title || movie.orginal_name)
             }
             key={movie.id}
-            className={`row_poster${isLargeRow ? " row_posterLarge" : ""}`}
+            className={`row_poster${isRow ? " row_poster" : ""}`}
             src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
+              isRow ? movie.poster_path : movie.backdrop_path
             }`}
             alt={movie.name}
           />
         ))}
       </div>
-
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
       {hoveredMovieDetails && (
         <MovieHover

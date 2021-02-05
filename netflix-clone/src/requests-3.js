@@ -10,7 +10,7 @@ const requests = {
   fetch80sMovies: `/movies/80s`,
   fetch90sMovies: `/movies/90s`,
   fetch00sMovies: `/movies/00s`,
-  fetchDisneyMovies: `/movies/disney`,
+  fetchDisney: `/movies/company/6125`,
   fetchThrillerMovies: `/movies/genre/53`,
   fetchAdventure: `/movies/genre/12`,
   fetchFamilyMovies: `/movies/genre/10751`,
