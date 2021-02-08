@@ -6,22 +6,19 @@ import Homepage from "./pages/Homepage";
 import Film from "./pages/Filmspage";
 import Discover from "./pages/Discoverpage";
 
+import Login from "./pages/Login";
+import history from './history';
+
 function App() {
   return (
     <div className="App">
-      <Router >
+      <Router history={history} >
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
 
-          {/* From here it is the main page with all the video content
-          <Route path="/Discover">
-            <Discoverpage />
-          </Route> */}
-
-          {/* <Route path="/Films">
-            <Film />
-          </Route> */}
+           {/* This is the logingpage */}
+           <Route path="/login" component={Login} />
 
           <Route path="/home">
             <Homepage />
