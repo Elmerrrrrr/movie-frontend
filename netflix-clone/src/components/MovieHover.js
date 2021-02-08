@@ -1,7 +1,7 @@
 import movieTrailer from "movie-trailer";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import "./css/MovieHovered.css";
+import "../css/MovieHovered.css";
 import { thumbsUp } from "react-icons-kit/feather/thumbsUp";
 import { thumbsDown } from "react-icons-kit/feather/thumbsDown";
 import { plus } from "react-icons-kit/entypo/plus";

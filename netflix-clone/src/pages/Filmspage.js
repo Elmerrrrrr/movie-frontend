@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
-import Banner from "./Banner";
-import Row from "./Row";
-import Footer from "./components/Footer_2";
-import requests from "./requests-3";
-import Popup from "./Popup";
+import Nav from "../components/Nav";
+import Banner from "../components/Banner.js";
+import Row from "../components/Row";
+import Footer from "../components/Footer_2";
+import requests from "../requests-3";
+import Popup from "../components/Popup";
 
+function Filmspage() {
+  const [activeMovie, setActiveMovie] = useState();
+  const [trailerUrl, setTrailerUrl] = useState();
 
-function DiscoverComponent() {
-    const [activeMovie, setActiveMovie] = useState();
-    const [trailerUrl, setTrailerUrl] = useState();
-  
-    function onPopupMoreInfoClick() {
-      setActiveMovie(null);
-      setTrailerUrl(null);
-    }
+  function onPopupMoreInfoClick() {
+    setActiveMovie(null);
+    setTrailerUrl(null);
+  }
 
   return (
     <React.Fragment>
@@ -75,4 +74,4 @@ function DiscoverComponent() {
   );
 }
 
-export default DiscoverComponent;
+export default Filmspage;

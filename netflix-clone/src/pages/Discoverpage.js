@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
-import Banner from "./Banner";
-import Row from "./Row";
-import Footer from "./components/Footer_2";
-import requests from "./requests-3";
-import Popup from "./Popup";
+import Nav from "../components/Nav";
+import Banner from "../components/Banner";
+import Row from "../components/Row";
+import Footer from "../components/Footer_2";
+import requests from "../requests-3";
+import Popup from "../components/Popup";
 
-function HomeComponent() {
+function Discoverpage() {
   const [activeMovie, setActiveMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState();
 
@@ -25,34 +25,46 @@ function HomeComponent() {
           togglePopup={onPopupMoreInfoClick}
         />
       )}
+
       <Banner
-        title="Random"
-        fetchUrl={fetchRandomMovie}
+        fetchUrl={requests.fetchComedyMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
-     
+
       <Row
-        title="80s"
-        fetchUrl={requests.fetch80sMovies}
-        setPopupMovie={setActiveMovie}
-        setPopupTrailerUrl={setTrailerUrl}
-      />
-      <Row
-        title="90s"
-        fetchUrl={requests.fetch90sMovies}
+        title="Comedy"
+        fetchUrl={requests.fetchComedyMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="200s"
-        fetchUrl={requests.fetch00sMovies}
+        title="Action"
+        fetchUrl={requests.fetchActionMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="Disney"
-        fetchUrl={requests.fetchDisney}
+        title="Thriller"
+        fetchUrl={requests.fetchThrillerMovies}
+        setPopupMovie={setActiveMovie}
+        setPopupTrailerUrl={setTrailerUrl}
+      />
+      <Row
+        title="Family"
+        fetchUrl={requests.fetchFamilyMovies}
+        setPopupMovie={setActiveMovie}
+        setPopupTrailerUrl={setTrailerUrl}
+      />
+      <Row
+        title="Fantasy"
+        fetchUrl={requests.fetchFantasyMovies}
+        setPopupMovie={setActiveMovie}
+        setPopupTrailerUrl={setTrailerUrl}
+      />
+      <Row
+        title="Crime"
+        fetchUrl={requests.fetchCrimeMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
@@ -62,4 +74,4 @@ function HomeComponent() {
   );
 }
 
-export default HomeComponent;
+export default Discoverpage;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "./axios-3";
-import "./css/Row.css";
+import axios from "../axios-3";
+import "../css/Row.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
-import MovieHover from "./MovieHover";
+import MovieHover from "../components/MovieHover";
 import Icon from "react-icons-kit";
 import { chevronLeft } from "react-icons-kit/ionicons/chevronLeft";
 import { chevronRight } from "react-icons-kit/ionicons/chevronRight";

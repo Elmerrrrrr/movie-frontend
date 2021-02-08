@@ -16,7 +16,7 @@ const requests = {
   fetchFamilyMovies: `/movies/genre/10751`,
   fetchFantasyMovies: `/movies/genre/14`,
   fetchCrimeMovies: `/movies/genre/80`,
-  fetchRandomMovie: `/movies/random`, // need backend V1.3 for this
+  fetchRandomMovie: `/movie/random`, // need backend V1.3 for this
 };
 
 export default requests;
