@@ -27,50 +27,40 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
-      <ul className="primary-navigation">
-        <li className="navigation-menu">
-          <div className="menu-trigger" href="_Blank">
-            Browse
-            <div className="caretPos1">
-              <div className="triangleDown" href="_Blank"></div>
-            </div>
-            <div className="browseContent">
-              <div className="triangleUpPos">
-                <div className="triangleUp"></div>
-              </div>
-              <div className="collapsePrimary">
-                <a href="/home">Home</a>
-                <a href="/#">Series</a>
-                <a href="/films">Films</a>
-                <a href="/#">New &#38; Popular</a>
-              </div>
-            </div>
+    <ul className="primary-navigation">
+    <li className="navigation-menu">
+      <div className="menu-trigger" href="_Blank">
+        Browse
+        <div className="caretPos1">
+          <div className="triangleDown" href="_Blank"></div>
+        </div>
+        <div className="browseContent">
+          <div className="triangleUpPos">
+            <div className="triangleUp"></div>
           </div>
-        </li>
-        <li className="navigation-tab">
-          <a
-            className={location.pathname === "/home" ? "active" : ""}
-            href="/home"
-          >
-            Home
-          </a>
-        </li>
-        <li className="navigation-tab">
-          <a href="/#">Series</a>
-        </li>
-        <li className="navigation-tab">
-          <a
-            className={location.pathname === "/films" ? "active" : ""}
-            href="/films"
-          >
-            Films
-          </a>
-        </li>
-        
-        <li className="navigation-tab">
-          <a href="/#">My List</a>
-        </li>
-      </ul>
+          <div className="collapsePrimary">
+            <a href="/home">Home</a>
+            <a href="/#">Series</a>
+            <a href="/films">Films</a>
+            <a href="/#">New &#38; Popular</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li className="navigation-tab">
+      <a className={location.pathname === "/home" ? "active" : ""} href="/home">Home</a>
+    </li>
+  <li className="navigation-tab">
+    <a href="/#">Series</a>
+  </li>
+  <li className="navigation-tab">
+    <a className={location.pathname === "/films" ? "active" : ""}href="/films">Films</a>
+  </li>
+    
+    <li className="navigation-tab">
+      <a href="/#">My List</a>
+    </li>
+    </ul>
       <div className="second-navigation">
         <div className="nav-element">
           <form action="" type="GET">
