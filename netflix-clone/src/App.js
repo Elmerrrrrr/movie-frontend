@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/Landingpage";
 import Homepage from "./pages/Homepage";
 import Film from "./pages/Filmspage";
-import Discover from "./pages/Discoverpage";
 
 function App() {
   return (
@@ -26,15 +25,6 @@ function App() {
           <Route path="/home">
             <Homepage />
           </Route>
-
-           {/* This is the Discover page */}
-           <Route path="/discover" component={Discover} />
-
-
-            {/* This is the Film page */}
-          <Route path="/film" component={Film} />
-
-
         </Switch>
       </Router>
     </div>
@@ -42,4 +32,3 @@ function App() {
 }
 
 export default App;
-
