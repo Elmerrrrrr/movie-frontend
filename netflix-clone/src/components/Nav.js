@@ -40,7 +40,7 @@ function Nav() {
               </div>
               <div className="collapsePrimary">
                 <a href="/home">Home</a>
-                <a href="_blank">Series</a>
+                <a href="/#">Series</a>
                 <a href="/films">Films</a>
                 <a href="/discover">Discover</a>
               </div>

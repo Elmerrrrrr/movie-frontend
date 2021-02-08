@@ -23,7 +23,7 @@ function App() {
             <Film />
           </Route> */}
 
-          <Route path="/Home">
+          <Route path="/home">
             <Homepage />
           </Route>
 
