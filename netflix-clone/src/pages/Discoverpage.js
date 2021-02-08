@@ -27,7 +27,7 @@ function Discoverpage() {
       )}
 
       <Banner
-        fetchUrl={requests.fetchComedyMovies}
+        fetchUrl={requests.fetchRandomMovie}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
