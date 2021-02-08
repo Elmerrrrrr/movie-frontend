@@ -5,22 +5,20 @@ import Main from "./pages/Landingpage";
 import Homepage from "./pages/Homepage";
 import Film from "./pages/Filmspage";
 
+
 function App() {
   return (
     <div className="App">
-      <Router >
+      <Router>
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
 
-          {/* From here it is the main page with all the video content
-          <Route path="/Discover">
-            <Discoverpage />
-          </Route> */}
+          {/* From here it is the main page with all the video content */}
 
-          {/* <Route path="/Films">
+          <Route path="/films">
             <Film />
-          </Route> */}
+          </Route>
 
           <Route path="/home">
             <Homepage />
