@@ -56,7 +56,7 @@ function Nav() {
           </a>
         </li>
         <li className="navigation-tab">
-          <a href="_Blank">Series</a>
+          <a href="/#">Series</a>
         </li>
         <li className="navigation-tab">
           <a
@@ -75,7 +75,7 @@ function Nav() {
           </a>
         </li>
         <li className="navigation-tab">
-          <a href="_Blank">My List</a>
+          <a href="/#">My List</a>
         </li>
       </ul>
       <div className="second-navigation">
