@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./css/Nav.css";
 import gift from "./images/Marigifts.png";
 import bell from "./images/Maribells.png";
 
 function Nav() {
+  const location = useLocation();
   const [show, handleShow] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -36,16 +39,22 @@ function Nav() {
                 <div className="triangleUp"></div>
               </div>
               <div className="collapsePrimary">
-                <a href="/">Home</a>
+                <a href="/home">Home</a>
                 <a href="_blank">Series</a>
-                <a href="/film">Films</a>
+                <a href="/films">Films</a>
+
                 <a href="/discover">Discover</a>
               </div>
             </div>
           </div>
         </li>
         <li className="navigation-tab">
-          <a className="current" href="/home">
+
+          <a
+            className={location.pathname === "/home" ? "active" : ""}
+            href="/home"
+          >
+
             Home
           </a>
         </li>
@@ -53,10 +62,22 @@ function Nav() {
           <a href="_Blank">Series</a>
         </li>
         <li className="navigation-tab">
-          <a href="/films">Films</a>
+
+          <a
+            className={location.pathname === "/films" ? "active" : ""}
+            href="/films"
+          >
+            Films
+          </a>
         </li>
         <li className="navigation-tab">
-          <a href="/discover">Discover</a>
+          <a
+            className={location.pathname === "/discover" ? "active" : ""}
+            href="/discover"
+          >
+            Discover
+          </a>
+
         </li>
         <li className="navigation-tab">
           <a href="_Blank">My List</a>

@@ -6,37 +6,32 @@ import { play } from "react-icons-kit/fa/play";
 import { info } from "react-icons-kit/icomoon/info";
 import ReactPlayer from "react-player";
 import requests from "./requests-3";
-import Popup from "./Popup";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Banner({ fetchUrl }) {
-  const [trailerPlaying, setTrailerPlaying] = useState(true);
+
+function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
+  const [trailerPlaying, setTrailerPlaying] = useState(false);
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  
 
+
+ 
   useEffect(() => {
     async function fetchData() {
 
-      const randomMovie = await axios.get(
-        requests.fetchRandom
-      );
+      const request = await axios.get(fetchUrl);
 
-      setTrailerUrl("https://youtube.com/watch?v=" + randomMovie.data.trailer);
-      setMovie(randomMovie.data);
+      setTrailerUrl("https://youtube.com/watch?v=" + request.data.trailer);
+      setMovie(request.data);
     }
-
-    fetchData()
-    .catch(e => {
-      console.log("I am afraid there is a slight problem with the fetch operation: " + e.message)
-    })
     
+    fetchData();
+
   }, [fetchUrl]);
   
 
-  
+
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
     document.querySelector("iframe").requestFullscreen();
@@ -44,7 +39,8 @@ function Banner({ fetchUrl }) {
   }
     
   function onMoreInfoClick() {
-    setShowPopup(!showPopup);
+    setPopupTrailerUrl(trailerUrl);
+    setPopupMovie(movie);
     if (trailerPlaying === true) {
       setTrailerPlaying(!trailerPlaying);
     }
@@ -67,6 +63,7 @@ function Banner({ fetchUrl }) {
       {trailerUrl && (
         <>
           <ReactPlayer
+            className="HideBannerVid"
             volume={1}
             muted={true}
             controls={false}
@@ -74,19 +71,13 @@ function Banner({ fetchUrl }) {
             width="100%"
             height="108%"
             playing={trailerPlaying}
-            url={trailerUrl + "?t=10"} className="hide-play-button"
-            onError={(notfound) => (notfound.target.style.display = "none")}
+
+            url={trailerUrl}
           />
           <div className="banner_overlay">
-
             <h2 id="error_message"></h2>
-
             <div className="banner_contents">
-
-              <div className="banner-poster">  
-                <img className="banner-img" src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="poster"/>
-
-              </div>
+            <img className="banner-img" src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="poster"/>
 
               <h1 className="banner_title">
                 {movie?.title || movie?.name || movie?.original_name}
@@ -105,15 +96,6 @@ function Banner({ fetchUrl }) {
                 </button>
               </div>
             </div>
-
-            {/* //popup// */}
-            {showPopup && (
-              <Popup
-                movie={movie}
-                trailerUrl={trailerUrl}
-                togglePopup={onMoreInfoClick}
-              />
-            )}
           </div>
         </>
       )}
