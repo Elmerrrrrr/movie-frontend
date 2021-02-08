@@ -1,4 +1,5 @@
 const requests = {
+  fetchRandomMovie: `/movies/random`, // need backend V1.3 for this
   fetchIntroBanner: `/movies/introBanner`,
   fetchDocumentaries: `/movies/genre/99`,
   fetchRomanceMovies: `/movies/genre/10749`,
@@ -6,6 +7,7 @@ const requests = {
   fetchActionMovies: `/movies/genre/28`,
   fetchComedyMovies: `/movies/genre/35`,
   fetchTopRated: `/movies/toprated/1`,
+
   fetchMovieDetails: `/movie/details`, //  info popup /movie/details/(id) movie id prop geven, dynamisch maken
   fetch80sMovies: `/movies/80s`,
   fetch90sMovies: `/movies/90s`,
@@ -17,7 +19,6 @@ const requests = {
   fetchFantasyMovies: `/movies/genre/14`,
   fetchCrimeMovies: `/movies/genre/80`,
   fetchRandomMovie: `/movie/random`,// need backend V1.3 for this
-
 };
 
 export default requests;

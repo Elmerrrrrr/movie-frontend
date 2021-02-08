@@ -9,14 +9,17 @@ import requests from "./requests-3";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
+
 function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
   const [trailerPlaying, setTrailerPlaying] = useState(false);
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
 
+
  
   useEffect(() => {
     async function fetchData() {
+
       const request = await axios.get(fetchUrl);
 
       setTrailerUrl("https://youtube.com/watch?v=" + request.data.trailer);
@@ -24,18 +27,17 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
     }
     
     fetchData();
+
   }, [fetchUrl]);
-
-
+  
 
 
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
-    if (trailerPlaying === false) {
-      document.querySelector("iframe").requestFullscreen();
-    }
+    document.querySelector("iframe").requestFullscreen();
+  
   }
-
+    
   function onMoreInfoClick() {
     setPopupTrailerUrl(trailerUrl);
     setPopupMovie(movie);
@@ -48,6 +50,7 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
+  
   return (
     <header
       className="banner"
@@ -62,17 +65,20 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
           <ReactPlayer
             className="HideBannerVid"
             volume={1}
-            muted={false}
+            muted={true}
             controls={false}
+            light={false}
             width="100%"
             height="108%"
             playing={trailerPlaying}
+
             url={trailerUrl}
           />
           <div className="banner_overlay">
             <h2 id="error_message"></h2>
             <div className="banner_contents">
             <img className="banner-img" src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="poster"/>
+
               <h1 className="banner_title">
                 {movie?.title || movie?.name || movie?.original_name}
               </h1>
@@ -98,3 +104,7 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
 }
 
 export default Banner;
+      
+      
+      
+

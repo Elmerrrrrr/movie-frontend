@@ -49,6 +49,9 @@ function Popup({ movie, trailerUrl, togglePopup }) {
         />
       </div>
 
+      
+
+      {/* buttons and icons */}
       <div className="modal_info">
         <button className="CloseBtn" onClick={togglePopup}>
           {" "}
@@ -75,7 +78,9 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           </button>
         </div>
 
+        {/* movie information */}
         <div className="modal_Description">
+
           <h4>Vote Average</h4>
           <h2>{movie?.vote_average}</h2>
           <p>{truncate(movie?.overview, 650)}</p>
@@ -98,6 +103,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           {movie.genres.map((genre) => (
             <p>{genre.name}</p>
           ))}
+
         </div>
       </div>
     </div>
@@ -105,3 +111,23 @@ function Popup({ movie, trailerUrl, togglePopup }) {
 }
 
 export default Popup;
+
+            
+            
+            
+            
+
+
+
+
+
+
+          
+
+          
+          
+
+            
+
+
+           

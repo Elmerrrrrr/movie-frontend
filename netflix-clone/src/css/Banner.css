@@ -99,6 +99,44 @@ iframe {
   margin-right: 0.7rem;
 }
 
+
+
+
+.banner-poster {
+  position: absolute;
+  z-index: 5;
+  top: -250px;
+  padding: 0.375rem;
+  height: 150%;
+  
+}
+
+
+
+
+
+.hide-play-button {
+  opacity: 0;
+}
+
+.banner-poster {
+  position: absolute;
+  z-index: 5;
+  top: -250px;
+  /* left: -175px; */
+  /* padding: 0.375rem; */
+  
+}
+
+.banner-img {
+  width: 50%;
+  height: auto;
+
+}
+
+
+
+
 /*--responsive--*/
 
 /*Tablets*/
@@ -109,4 +147,10 @@ iframe {
     padding-top: 6rem;
     margin-left: 2rem;
   }
+
+
+
+
+
+
 }

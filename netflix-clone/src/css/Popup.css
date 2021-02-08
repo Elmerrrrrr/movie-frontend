@@ -49,8 +49,7 @@
   padding: 20px 20px 0px 20px;
   background-color: #181818;
   height: 30rem;
- 
-  
+
 }
 
 .infoPlay {
@@ -67,6 +66,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   margin-right: 1rem;
+  z-index: 50;
 }
 
 .RoundBtn {
@@ -100,3 +100,4 @@
   height: 2.4rem;
   width: 2.4rem;
 }
+

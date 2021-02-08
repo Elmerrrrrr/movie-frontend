@@ -15,6 +15,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   const [trailerUrl, setTrailerUrl] = useState("");
   const [hoveredMovieDetails, setHoveredMovieDetails] = useState(null);
 
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);

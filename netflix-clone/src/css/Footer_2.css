@@ -8,6 +8,8 @@
   padding: 0 4%;
   text-decoration: none;
 }
+
+
 .social_links {
   display: flex;
   align-items: center;
@@ -25,9 +27,9 @@
   display: flex;
   justify-content: space-between;
 }
+
 .textblock {
   overflow: hidden;
-
   display: inline;
 }
 
@@ -64,3 +66,15 @@
 
 @media screen and (min-width: 1200px) {
 }
+
+.textblock_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media only screen and (max-width: 800px) {
+  .textblock_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

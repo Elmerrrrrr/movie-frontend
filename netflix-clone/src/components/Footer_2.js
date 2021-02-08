@@ -28,7 +28,13 @@ class Footer extends Component {
           <a href="https://www.youtube.com/user/netflixbenelux" target="_blank"rel="noreferrer"><img src={youtube} alt="YT"/></a>
         </div>
          
+
         <div className="textblock_container">
+
+         <div className="footer-container">    
+         
+
+
           <div className="textblock">
             <a href="ok">Audio and Subtitles</a>
             <a href="ok">Help Centre</a>
@@ -57,6 +63,8 @@ class Footer extends Component {
         </div>
         <button className="service_Btn">Service Code</button>
         <div className="Copyright">&#169; 1997-2021 Netflix, Inc.</div>
+
+        </div>
       </div>
     );
   }
