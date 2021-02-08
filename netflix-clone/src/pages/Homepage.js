@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
-import Banner from "./Banner";
-import Row from "./Row";
-import Footer from "./components/Footer_2";
-import requests from "./requests-3";
-import Popup from "./Popup";
+import Nav from "../components/Nav";
+import Banner from "../components/Banner";
+import Row from "../components/Row";
+import Footer from "../components/Footer_2";
+import requests from "../requests-3";
+import Popup from "../components/Popup";
 
-function FilmsComponent() {
+function Homepage() {
   const [activeMovie, setActiveMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState();
 
@@ -25,46 +25,34 @@ function FilmsComponent() {
           togglePopup={onPopupMoreInfoClick}
         />
       )}
-
       <Banner
-        fetchUrl={requests.fetchComedyMovies}
+        title="Random"
+        fetchUrl={requests.fetchRandomMovie}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
-
+     
       <Row
-        title="Comedy"
-        fetchUrl={requests.fetchComedyMovies}
-        setPopupMovie={setActiveMovie}
-        setPopupTrailerUrl={setTrailerUrl}
-      />
-      <Row
-        title="Action"
-        fetchUrl={requests.fetchActionMovies}
+        title="80s"
+        fetchUrl={requests.fetch80sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="Thriller"
-        fetchUrl={requests.fetchThrillerMovies}
+        title="90s"
+        fetchUrl={requests.fetch90sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="Family"
-        fetchUrl={requests.fetchFamilyMovies}
+        title="200s"
+        fetchUrl={requests.fetch00sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="Fantasy"
-        fetchUrl={requests.fetchFantasyMovies}
-        setPopupMovie={setActiveMovie}
-        setPopupTrailerUrl={setTrailerUrl}
-      />
-      <Row
-        title="Crime"
-        fetchUrl={requests.fetchCrimeMovies}
+        title="Disney"
+        fetchUrl={requests.fetchDisney}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
@@ -74,4 +62,4 @@ function FilmsComponent() {
   );
 }
 
-export default FilmsComponent;
+export default Homepage;

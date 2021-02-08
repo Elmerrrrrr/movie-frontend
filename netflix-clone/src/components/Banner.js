@@ -1,37 +1,30 @@
 import React, { useState, useEffect } from "react";
-import axios from "./axios-3";
-import "./css/Banner.css";
+import axios from "../axios-3";
+import "../css/Banner.css";
 import Icon from "react-icons-kit";
 import { play } from "react-icons-kit/fa/play";
 import { info } from "react-icons-kit/icomoon/info";
 import ReactPlayer from "react-player";
-import requests from "./requests-3";
+// import requests from "../requests-3";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
-
 
 function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
   const [trailerPlaying, setTrailerPlaying] = useState(false);
   const [movie, setMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState("");
 
-
- 
   useEffect(() => {
     async function fetchData() {
-
       const request = await axios.get(fetchUrl);
-
       setTrailerUrl("https://youtube.com/watch?v=" + request.data.trailer);
       setMovie(request.data);
     }
-    
     fetchData();
-
   }, [fetchUrl]);
   
 
-
+  
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
     document.querySelector("iframe").requestFullscreen();
@@ -63,7 +56,7 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
       {trailerUrl && (
         <>
           <ReactPlayer
-            className="HideBannerVid"
+          className="HideBannerVid"
             volume={1}
             muted={true}
             controls={false}
@@ -71,19 +64,19 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
             width="100%"
             height="108%"
             playing={trailerPlaying}
-
             url={trailerUrl}
           />
           <div className="banner_overlay">
-            <h2 id="error_message"></h2>
+            {/* <h2 id="error_message"></h2> */}
             <div className="banner_contents">
-            <img className="banner-img" src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="poster"/>
-
+              <div className="banner-logo">
+            <img  src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="logo"/>
+            </div>
               <h1 className="banner_title">
-                {movie?.title || movie?.name || movie?.original_name}
+                { movie?.name || movie?.original_name}
               </h1>
               <h1 className="banner_description">
-                {truncate(movie?.overview, 150)}
+                {truncate(movie?.overview, 115)}
               </h1>
               <div className="banner_buttons">
                 <button className="banner_button" onClick={onPlayButtonClick}>

@@ -11,21 +11,25 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 3.5rem;
-  
 }
 
 .videomodal {
-  margin-top: 2.5rem;
-  margin-left: 22.5rem;
+  margin-top: 2.4rem;
+  margin-left: 20rem;
   width: 100%;
   height: 100%;
-  
+}
+.Movie-logo {
+  position: relative;
+  transform: scale(0.45);
+  margin-left: -31rem;
+  margin-top: -23rem;
+  z-index: 3;
 }
 
 .modal_info {
   position: absolute;
   top: 0;
-  width: 45rem;
   height: 850px;
   margin-left: 25%;
   margin-right: 25%;
@@ -39,21 +43,34 @@
   align-items: center;
   margin-bottom: 1em;
   min-height: 2em;
-  margin-left: 1.5rem;
-
+  margin-left: 0.5rem;
 }
 
 .modal_Description {
-  margin-top: -0.8rem;
+  font-family: "Netreg";
+  margin-top: 0.5rem;
+  margin-left: -2.5rem;
   position: absolute;
-  padding: 20px 20px 0px 20px;
+  padding: 20px 20px 20px 14px;
   background-color: #181818;
   height: 30rem;
+  display: flex;
+}
 
+.length-director-overview {
+  max-width: 70%;
+  padding: 0.75rem;
+}
+
+.movie-logo {
+  max-height: 125px;
+  margin-top: 1rem;
+  border: 1px solid var(--main-red);
+  padding: 0.625rem;
 }
 
 .infoPlay {
-  font-family: "netmid";
+  font-family: "Netmid";
   font-size: 1.2rem;
   cursor: pointer;
   color: #000;
@@ -70,17 +87,22 @@
 }
 
 .RoundBtn {
+  transform: scale(1.2);
   cursor: pointer;
   color: #fff;
   background-color: rgba(42, 42, 42, 0.6);
-  border-color: rgba(255, 255, 255, 0.5);
-  border: solid 2px #fff;
+  border: solid 2px rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   outline: none;
   height: 3rem;
   width: 3rem;
   margin-right: 1rem;
 }
+
+.iconsize {
+  transform: scale(1.6);
+}
+
 .playInfo {
   transform: scale(1.2);
   margin-left: 0.8rem;
@@ -89,12 +111,12 @@
 
 .CloseBtn {
   margin-top: 3rem;
-  margin-left: 42.1rem;
+  margin-left: 46rem;
   cursor: pointer;
   color: #fff;
-  background-color: #000;
+  background-color: #181818;
   border-color: rgba(255, 255, 255, 0.5);
-  border: solid 2px #fff;
+  border: none;
   border-radius: 50%;
   outline: none;
   height: 2.4rem;
