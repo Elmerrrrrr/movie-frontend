@@ -12,21 +12,27 @@ import history from './history';
 function App() {
   return (
     <div className="App">
-      <Router history={history} >
-        <Switch>
-          {/* This is the landingpage */}
-          <Route path="/" exact component={() => <Main />} />
+    <Router history={history} >
+      <Switch>
+        {/* This is the landingpage */}
+        <Route path="/" exact component={() => <Main />} />
 
-           {/* This is the logingpage */}
-           <Route path="/login" component={Login} />
+         {/* This is the logingpage */}
+         <Route path="/login" component={Login} />
 
-          <Route path="/home">
-            <Homepage />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+        {/* From here it is the main page with all the video content */}
+
+        <Route path="/films">
+          <Film />
+        </Route>
+
+        <Route path="/home">
+          <Homepage />
+        </Route>
+      </Switch>
+    </Router>
+  </div>
+);
 }
 
 export default App;
