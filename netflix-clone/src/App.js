@@ -12,25 +12,13 @@ import history from './history';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       <Router history={history} >
-=======
-      <Router>
->>>>>>> aaee4b83b12e748329da06fc3ea0f5cc3478719d
         <Switch>
           {/* This is the landingpage */}
           <Route path="/" exact component={() => <Main />} />
 
-<<<<<<< HEAD
            {/* This is the logingpage */}
            <Route path="/login" component={Login} />
-=======
-          {/* From here it is the main page with all the video content */}
-
-          <Route path="/films">
-            <Film />
-          </Route>
->>>>>>> aaee4b83b12e748329da06fc3ea0f5cc3478719d
 
           <Route path="/home">
             <Homepage />
