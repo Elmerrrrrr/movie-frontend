@@ -33,19 +33,19 @@ function Homepage() {
       />
      
       <Row
-        title="80s"
+        title="'80s"
         fetchUrl={requests.fetch80sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="90s"
+        title="'90s"
         fetchUrl={requests.fetch90sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />
       <Row
-        title="200s"
+        title="'00s"
         fetchUrl={requests.fetch00sMovies}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
@@ -53,6 +53,12 @@ function Homepage() {
       <Row
         title="Disney"
         fetchUrl={requests.fetchDisney}
+        setPopupMovie={setActiveMovie}
+        setPopupTrailerUrl={setTrailerUrl}
+      />
+      <Row
+        title="Denzel Washington"
+        fetchUrl={requests.fetchActor}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
       />

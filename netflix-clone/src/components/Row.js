@@ -18,7 +18,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-      setMovies(request.data.results);
+      setMovies(request.data);
       return request;
     }
     fetchData();
@@ -115,7 +115,11 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
             }`}
             alt={movie.name}
           />
+        
         ))}
+           <h5 className="row_title">
+          {movies?.name || movies?.original_name}
+        </h5>
       </div>
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
       {hoveredMovieDetails && (
