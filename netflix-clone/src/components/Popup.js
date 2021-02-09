@@ -86,7 +86,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           <div className="Movie_info">
             <div className="infoLeft">
               <div>
-                <p>{truncate(movie?.overview, 250)}</p>
+                <p>{truncate(movie?.overview, 450)}</p>
               </div>
               <div>
                 <h4>Rated</h4>
