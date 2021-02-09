@@ -31,8 +31,8 @@ iframe {
   background-image: linear-gradient(
     to bottom,
     rgb(14, 14, 14, 0) 10%,
-    rgb(14, 14, 14, 0.9) 60%,
-    rgb(14, 14, 14, 0.9) 20%,
+    rgb(14, 14, 14, 0.2) 30%,
+    rgb(14, 14, 14, 0.9) 70%,
     #181818 100%
   );
 }
