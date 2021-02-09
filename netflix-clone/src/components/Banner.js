@@ -22,15 +22,14 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
     }
     fetchData();
   }, [fetchUrl]);
-  
 
-  
   function onPlayButtonClick() {
     setTrailerPlaying(!trailerPlaying);
-    document.querySelector("iframe").requestFullscreen();
-  
+    if (trailerPlaying === false) {
+      document.querySelector("iframe").requestFullscreen();
+    }
   }
-    
+
   function onMoreInfoClick() {
     setPopupTrailerUrl(trailerUrl);
     setPopupMovie(movie);
@@ -43,7 +42,6 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
-  
   return (
     <header
       className="banner"
@@ -56,9 +54,9 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
       {trailerUrl && (
         <>
           <ReactPlayer
-          className="HideBannerVid"
+            className="HideBannerVid"
             volume={1}
-            muted={true}
+            muted={false}
             controls={false}
             light={false}
             width="100%"
@@ -70,10 +68,13 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
             {/* <h2 id="error_message"></h2> */}
             <div className="banner_contents">
               <div className="banner-logo">
-            <img  src= {`${movie?.movie_logo_urls.movielogos[0].url_hd}`} alt="logo"/>
-            </div>
+                <img
+                  src={`${movie?.movie_logo_urls.movielogos[0].url_hd}`}
+                  alt="logo"
+                />
+              </div>
               <h1 className="banner_title">
-                { movie?.name || movie?.original_name}
+                {movie?.name || movie?.original_name}
               </h1>
               <h1 className="banner_description">
                 {truncate(movie?.overview, 115)}
@@ -97,7 +98,3 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
 }
 
 export default Banner;
-      
-      
-      
-

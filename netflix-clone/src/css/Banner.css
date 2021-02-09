@@ -6,12 +6,12 @@
   height: 50rem;
 }
 
-.banner-logo{
-  position:relative;
+.banner-logo {
+  position: relative;
   transform: scale(0.5);
-  margin-right:9rem;
-  margin-left:-12.7rem;
-  margin-bottom:-5rem;
+  margin-right: 9rem;
+  margin-left: -12.7rem;
+  margin-bottom: -5rem;
 }
 
 .HideBannerVid {
@@ -28,6 +28,13 @@ iframe {
   top: 0;
   right: 0;
   bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(14, 14, 14, 0) 10%,
+    rgb(14, 14, 14, 0.9) 60%,
+    rgb(14, 14, 14, 0.9) 20%,
+    #181818 100%
+  );
 }
 
 .banner_contents {
@@ -36,8 +43,6 @@ iframe {
   bottom: 7rem;
   user-select: none;
 }
-
-
 
 .banner_description {
   font-family: "Netlite";
@@ -103,10 +108,4 @@ iframe {
     padding-top: 6rem;
     margin-left: 2rem;
   }
-
-
-
-
-
-
 }

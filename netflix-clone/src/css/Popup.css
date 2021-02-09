@@ -20,45 +20,71 @@
   height: 100%;
 }
 
-.Movie-logo {
-  position: absolute;
-  transform: scale(0.25);
-  margin-left: 10rem;
-  margin-top: -10rem;
-  padding: 1.25rem;
-  z-index: 1;
-  border: 5px solid var(--main-red);
-}
-
-
 .modal_info {
   position: absolute;
   top: 0;
   height: 850px;
-  margin-left: 25%;
+  margin-left: 22.2%;
   margin-right: 25%;
-  background: linear-gradient(to top, #181818, transparent 50%);
+}
+
+.Movie-logo {
+  margin-top: 2rem;
+  width: 50%;
+  height: auto;
 }
 
 .modalBtns {
-  margin-top: 17rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
-  min-height: 2em;
-  margin-left: 0.5rem;
+  min-height: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 0.8rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(18, 18, 18, 0) 10%,
+    rgb(18, 18, 18, 0.5) 30%,
+    rgb(18, 18, 18, 0.9) 70%,
+    #181818 100%
+  );
 }
 
 .modal_Description {
   font-family: "Netreg";
-  margin-top: 0.5rem;
-  margin-left: -2.5rem;
   position: absolute;
   padding: 20px 20px 20px 14px;
   background-color: #181818;
   height: 30rem;
   display: flex;
+  width: 48.35rem;
+}
+
+.Movie_info {
+  display: flex;
+  justify-content: space-between;
+  width: 48.35rem;
+}
+
+.infoRight {
+  width: 10rem;
+}
+
+.infoRight div {
+  margin-bottom: 1rem;
+}
+
+.infoRight div h5 {
+  color: gray;
+}
+
+.infoLeft {
+  width: 33rem;
+  margin-left: 1rem;
+}
+
+.infoLeft div {
+  margin-bottom: 1rem;
 }
 
 .length-director-overview {
@@ -119,4 +145,3 @@
   height: 2.4rem;
   width: 2.4rem;
 }
-

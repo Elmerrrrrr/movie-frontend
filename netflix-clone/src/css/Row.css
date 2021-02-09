@@ -7,10 +7,6 @@
   margin-top: 1rem;
 }
 
-h2 {
-  margin-left: 1.25rem;
-}
-
 .arrows {
   display: none;
   position: absolute;
@@ -21,7 +17,7 @@ h2 {
 }
 
 .size {
-  background-color:rgba(20,20,20,.5);
+  background-color: rgba(20, 20, 20, 0.5);
   height: 9rem;
   color: white;
   border: none;
@@ -31,9 +27,9 @@ h2 {
 }
 
 .size:hover {
-  background-color:rgba(20,20,20,.5);
+  background-color: rgba(20, 20, 20, 0.5);
   width: 5rem;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .row:hover .arrows {
