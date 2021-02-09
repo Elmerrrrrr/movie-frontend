@@ -42,7 +42,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
           volume={1}
           muted={false}
           controls={false}
-          width="48.33rem"
+          width="48.34rem"
           height="22.5rem"
           playing={trailerPlaying}
           url={trailerUrl}
