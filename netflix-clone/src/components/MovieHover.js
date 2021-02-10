@@ -83,14 +83,17 @@ function MovieHover({
       </div>
 
       <div className="movie-details-container">
+        
       <div>
-                <h5>Director</h5>
-                <h4>{movie?.director}</h4>
-              </div>
-              <div>
-                <h4>Duration:</h4>
-                <h4>{movie?.runtime} Min</h4>
-              </div>
+        <p>Director</p>
+        <p>{movie?.director}</p>
+      </div>
+
+      <div>
+        <p>Duration:</p>
+        <p>{movie?.runtime} Min</p>
+      </div>
+
       </div>
     </div>
   );

@@ -51,6 +51,7 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
         backgroundPosition: "center center",
       }}
     >
+      {escape()}
       {trailerUrl && (
         <>
           <ReactPlayer
@@ -65,7 +66,6 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
             url={trailerUrl}
           />
           <div className="banner_overlay">
-            {/* <h2 id="error_message"></h2> */}
             <div className="banner_contents">
               <div className="banner-logo">
                 <img
