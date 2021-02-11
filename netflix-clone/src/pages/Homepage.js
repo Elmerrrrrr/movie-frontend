@@ -25,12 +25,13 @@ function Homepage() {
           togglePopup={onPopupMoreInfoClick}
         />
       )}
-      <Banner
+
+      { <Banner
         title="Random"
         fetchUrl={requests.fetchRandomMovie}
         setPopupMovie={setActiveMovie}
         setPopupTrailerUrl={setTrailerUrl}
-      />
+      />}
      
       <Row
         title="'80s"

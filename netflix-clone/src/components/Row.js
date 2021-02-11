@@ -20,6 +20,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
       const request = await axios.get(fetchUrl);
       setMovies(request.data);
       return request;
+      
     }
     fetchData();
   }, [fetchUrl]);
@@ -88,7 +89,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
       }
     }, speed);
   }
-
+  
   return (
     <div className="row">
       <h2>{title}</h2>
@@ -103,6 +104,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
 
       <div className="row_posters" ref={ref}>
         {movies.map((movie) => (
+          
           <img
             onMouseOver={onMovieHover(movie)}
             onClick={() =>
@@ -114,12 +116,18 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
               isRow ? movie.poster_path : movie.backdrop_path
             }`}
             alt={movie.name}
+            
           />
+          
         
         ))}
            <h5 className="row_title">
           {movies?.name || movies?.original_name}
         </h5>
+        
+
+        
+
       </div>
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
       {hoveredMovieDetails && (
