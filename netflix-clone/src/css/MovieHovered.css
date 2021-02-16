@@ -3,7 +3,6 @@
   background-color: #181818;
   width: 13rem;
   height: 14rem;
-  margin-left: 2.5rem;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -11,14 +10,20 @@
   transform: scale(1.5);
   transition: transform 0.5s;
 }
+.movie-details-container {
+  padding: 0.125rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+}
 
-@keyframes OpacitySlider {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+
+.hover-movie-logo {
+  width: 6.25rem;
+  height: 3.1rem;
+
+  padding: 1rem;
+  
 }
 
 .trailer-container {

@@ -66,12 +66,12 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
 
   function next() {
     let container = ref.current;
-    sideScroll(container, "right", 10, 500, 10);
+    sideScroll(container, "right", 5, 500, 2);
   }
 
   function previous() {
     let container = ref.current;
-    sideScroll(container, "left", 10, 500, 10);
+    sideScroll(container, "left", 5, 500, 2);
   }
 
   function sideScroll(element, direction, speed, distance, step) {
@@ -92,15 +92,12 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <div className="arrows">
-        <button className="size" onClick={() => previous()}>
-          <Icon className="leftclick" icon={chevronLeft} />
-        </button>
-        <button className="size" onClick={() => next()}>
-          <Icon className="rightclick" icon={chevronRight} />
-        </button>
-      </div>
-
+      <button className="buttonLeft" onClick={() => previous()}>
+        <Icon className="leftclick" icon={chevronLeft} />
+      </button>
+      <button className="buttonRight" onClick={() => next()}>
+        <Icon className="rightclick" icon={chevronRight} />
+      </button>
       <div className="row_posters" ref={ref}>
         {movies.map((movie) => (
           <img
@@ -117,6 +114,7 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
           />
         ))}
       </div>
+
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}
       {hoveredMovieDetails && (
         <MovieHover

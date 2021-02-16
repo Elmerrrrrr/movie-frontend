@@ -11,34 +11,45 @@ h2 {
   margin-left: 1.25rem;
 }
 
-.arrows {
-  display: none;
-  position: absolute;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  z-index: 10;
-}
+/* .arrows {
+} */
 
-.size {
-  background-color:rgba(20,20,20,.5);
+.buttonLeft {
+  background-color: rgba(20, 20, 20, 0.5);
   height: 9rem;
+  width: 5rem;
   color: white;
   border: none;
-  border: none;
-  width: 5rem;
   outline: none;
+  display: none;
+  position: absolute;
+  align-items: center;
 }
-
-.size:hover {
-  background-color:rgba(20,20,20,.5);
+.buttonRight {
+  margin-left: 1360px;
+  background-color: rgba(20, 20, 20, 0.5);
+  height: 9rem;
   width: 5rem;
-  cursor:pointer;
+  color: white;
+  border: none;
+  outline: none;
+  display: none;
+  position: absolute;
+  align-items: center;
 }
 
-.row:hover .arrows {
-  display: flex;
+.buttonLeft .buttonRight:hover {
+  cursor: pointer;
 }
+
+.row:hover .buttonRight {
+  display: block;
+}
+
+.row:hover .buttonLeft {
+  display: block;
+}
+
 .leftclick {
   transform: scale(3);
 }

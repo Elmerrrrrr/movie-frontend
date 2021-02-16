@@ -5,7 +5,6 @@ import Icon from "react-icons-kit";
 import { play } from "react-icons-kit/fa/play";
 import { info } from "react-icons-kit/icomoon/info";
 import ReactPlayer from "react-player";
-// import requests from "../requests-3";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -51,7 +50,6 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
         backgroundPosition: "center center",
       }}
     >
-      {escape()}
       {trailerUrl && (
         <>
           <ReactPlayer

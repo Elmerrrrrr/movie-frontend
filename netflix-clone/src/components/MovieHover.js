@@ -83,17 +83,22 @@ function MovieHover({
       </div>
 
       <div className="movie-details-container">
-        
-      <div>
-        <p>Director</p>
-        <p>{movie?.director}</p>
-      </div>
+        <div>
+          <p>Director</p>
+          <p>{movie?.director}</p>
+        </div>
 
-      <div>
-        <p>Duration:</p>
-        <p>{movie?.runtime} Min</p>
-      </div>
-
+        <div>
+          <p>Duration:</p>
+          <p>{movie?.runtime} Min</p>
+        </div>
+        <div>
+          <img
+            className="hover-movie-logo"
+            src={`${movie?.movie_logos[0].url_hd}`}
+            alt="logo"
+          />
+        </div>
       </div>
     </div>
   );
