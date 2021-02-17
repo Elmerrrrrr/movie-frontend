@@ -51,14 +51,14 @@ function Nav() {
       <a className={location.pathname === "/home" ? "active" : ""} href="/home">Home</a>
     </li>
   <li className="navigation-tab">
-    <a href="/#">Series</a>
+    <a href="/home">Series</a>
   </li>
   <li className="navigation-tab">
     <a className={location.pathname === "/films" ? "active" : ""}href="/films">Films</a>
   </li>
     
     <li className="navigation-tab">
-      <a href="/#">My List</a>
+      <a href="/home">My List</a>
     </li>
     </ul>
       <div className="second-navigation">
