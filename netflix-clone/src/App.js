@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/Landingpage";
 import Homepage from "./pages/Homepage";
 import Film from "./pages/Filmspage";
+import Searchpage from "./pages/Searchpage";
 
 
 import Login from "./pages/Login";
@@ -29,6 +30,11 @@ function App() {
         <Route path="/home">
           <Homepage />
         </Route>
+
+        <Route path="/search">
+          <Searchpage />
+        </Route>
+
       </Switch>
     </Router>
   </div>

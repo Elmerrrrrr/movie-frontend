@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
+import SearchBar from "./SearchBar";
 
 function Nav() {
   const location = useLocation();
@@ -40,9 +41,8 @@ function Nav() {
           </div>
           <div className="collapsePrimary">
             <a href="/home">Home</a>
-            <a href="/#">Series</a>
-            <a href="/films">Films</a>
-            <a href="/#">New &#38; Popular</a>
+            <a href="/films">Discover</a>
+            <a href="/search">Search</a>
           </div>
         </div>
       </div>
@@ -51,15 +51,15 @@ function Nav() {
       <a className={location.pathname === "/home" ? "active" : ""} href="/home">Home</a>
     </li>
   <li className="navigation-tab">
-    <a href="/home">Series</a>
+    <a href="/home">Discover</a>
   </li>
   <li className="navigation-tab">
     <a className={location.pathname === "/films" ? "active" : ""}href="/films">Films</a>
   </li>
     
-    <li className="navigation-tab">
-      <a href="/home">My List</a>
-    </li>
+  <li className="navigation-tab">
+    <a className={location.pathname === "/search" ? "active" : ""}href="/search">Search</a>
+  </li>
     </ul>
       <div className="second-navigation">
         <div className="nav-element">
@@ -71,6 +71,9 @@ function Nav() {
             ></input>
           </form>
         </div>
+
+       
+
         <div className="nav-element">
           <a className="children" href="_Blank">
             CHILDREN
