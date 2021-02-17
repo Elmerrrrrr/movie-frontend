@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import { search } from "./Utils";
-import Movies from "./MovieCard";
+import { search } from "./utils";
+import Movies from "./Movies";
 
 class SearchLive extends Component {
   state = {

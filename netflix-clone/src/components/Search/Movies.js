@@ -1,6 +1,6 @@
-import classes from "../../css/Movie-module.css";
+import Movie from "./Movie";
+import classes from "../../css/Movies-module.css";
 import React from "react";
-import Movie from "./MovieCard";
 
 
 const Movies = ({ list }) => {
