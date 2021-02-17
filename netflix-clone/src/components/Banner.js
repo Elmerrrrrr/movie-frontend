@@ -67,7 +67,7 @@ function Banner({ fetchUrl, setPopupMovie, setPopupTrailerUrl }) {
             <div className="banner_contents">
               <div className="banner-logo">
                 <img
-                  src={`${movie?.movie_logo_urls.movielogos[0].url_hd}`}
+                  src={`${movie?.movielogos[0].url_hd}`}
                   alt="logo"
                 />
               </div>
