@@ -57,8 +57,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
 
         <img
           className="Movie-logo"
-          src={`${movie?.movie_logo_urls.movielogos[0].url_hd}`}
-          // src={`${movie?.movie_logos[0].url_hd}`}
+          src={`${movie?.movielogos[0].url_hd}`}
           alt="logo"
         />
 
