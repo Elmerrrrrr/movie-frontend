@@ -27,7 +27,7 @@ class SearchLive extends Component {
   };
 
   get renderMovies() {
-    let movies = <h1>There's no movies</h1>;
+    let movies = <h1>Search movies</h1>;
     if (this.state.movies) {
       movies = <Movies list={this.state.movies} />;
     }
@@ -42,7 +42,7 @@ class SearchLive extends Component {
           <input
             value={this.state.value}
             onChange={e => this.onChangeHandler(e)}
-            placeholder="Type something to search"
+            placeholder="Type to search"
           />
           {this.renderMovies}
         </div>
