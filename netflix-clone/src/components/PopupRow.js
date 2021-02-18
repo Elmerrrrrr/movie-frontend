@@ -102,20 +102,28 @@ function Popup({ movie, trailerUrl, togglePopup }) {
               </div>
             </div>
             <div className="infoRight">
-              <div>
+            <div>
+          <img
+            className="Movie-logo"
+            src={`${movie?.movie_logos[0].url_hd}`}
+            alt="logo"
+          />
+        </div>
+
+              {/* <div>
                 <h5>Cast:</h5>
                 {movie.cast.map((actor) => (
                   <p>
                     {actor.name} {"as:"} {actor.character}
                   </p>
                 ))}
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <h5>Genres:</h5>
                 {movie.genres.map((genre) => (
                   <p>{genre.name}</p>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

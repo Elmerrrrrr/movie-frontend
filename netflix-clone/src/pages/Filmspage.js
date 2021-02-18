@@ -5,8 +5,21 @@ import Row from "../components/Row";
 import Footer from "../components/Footer_2";
 import requests from "../requests-3";
 import Popup from "../components/Popup";
+import PopupRow from "../components/PopupRow";
+
 
 function Filmspage() {
+
+
+  const [activeMovieBanner, setActiveMovieBanner] = useState();
+  const [trailerUrlBanner, setTrailerUrlBanner] = useState();
+
+  function onPopupMoreInfoClickBanner() {
+    setActiveMovieBanner(null);
+    setTrailerUrlBanner(null);
+  }
+
+
   const [activeMovie, setActiveMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState();
 
@@ -18,13 +31,24 @@ function Filmspage() {
   return (
     <React.Fragment>
       <Nav />
-      {activeMovie && trailerUrl && (
+
+
+        {activeMovieBanner && trailerUrlBanner && (
         <Popup
+          movie={activeMovieBanner}
+          trailerUrl={trailerUrlBanner}
+          togglePopup={onPopupMoreInfoClickBanner}
+        />
+      )}
+
+      {activeMovie && trailerUrl && (
+        <PopupRow
           movie={activeMovie}
           trailerUrl={trailerUrl}
           togglePopup={onPopupMoreInfoClick}
         />
       )}
+
 
       <Banner
         fetchUrl={requests.fetchRandomMovie}
