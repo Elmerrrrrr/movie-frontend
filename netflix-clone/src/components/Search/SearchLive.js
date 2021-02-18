@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 import { search } from "./utils";
 import Movies from "./Movies";
@@ -37,13 +37,15 @@ class SearchLive extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          value={this.state.value}
-          onChange={e => this.onChangeHandler(e)}
-          placeholder="Type something to search"
-        />
-        {this.renderMovies}
+      <div className="searchContainer">
+        <div>
+          <input
+            value={this.state.value}
+            onChange={e => this.onChangeHandler(e)}
+            placeholder="Type something to search"
+          />
+          {this.renderMovies}
+        </div>
       </div>
     );
   }
