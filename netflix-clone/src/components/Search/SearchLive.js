@@ -14,7 +14,8 @@ class SearchLive extends Component {
   search = async val => {
     this.setState({ loading: true });
     const results = await search(
-      `https://api.themoviedb.org/3/search/movie?query=${val}&api_key=dbc0a6d62448554c27b6167ef7dabb1b`
+      `http://localhost:2021/search/movie/${val}`
+      
     );
     const movies = results;
 
