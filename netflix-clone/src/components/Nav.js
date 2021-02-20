@@ -28,51 +28,55 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
-    <ul className="primary-navigation">
-    <li className="navigation-menu">
-      <div className="menu-trigger" href="_Blank">
-        Browse
-        <div className="caretPos1">
-          <div className="triangleDown" href="_Blank"></div>
-        </div>
-        <div className="browseContent">
-          <div className="triangleUpPos">
-            <div className="triangleUp"></div>
+      <ul className="primary-navigation">
+        <li className="navigation-menu">
+          <div className="menu-trigger" href="_Blank">
+            Browse
+            <div className="caretPos1">
+              <div className="triangleDown" href="_Blank"></div>
+            </div>
+            <div className="browseContent">
+              <div className="triangleUpPos">
+                <div className="triangleUp"></div>
+              </div>
+              <div className="collapsePrimary">
+                <a href="/home">Home</a>
+                <a href="/films">Discover</a>
+                <a href="/search">Search</a>
+              </div>
+            </div>
           </div>
-          <div className="collapsePrimary">
-            <a href="/home">Home</a>
-            <a href="/films">Discover</a>
-            <a href="/search">Search</a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li className="navigation-tab">
-      <a className={location.pathname === "/home" ? "active" : ""} href="/home">Home</a>
-    </li>
-  <li className="navigation-tab">
-    <a href="/home">Discover</a>
-  </li>
-  <li className="navigation-tab">
-    <a className={location.pathname === "/films" ? "active" : ""}href="/films">Films</a>
-  </li>
-    
-  <li className="navigation-tab">
-    <a className={location.pathname === "/search" ? "active" : ""}href="/search">Search</a>
-  </li>
-    </ul>
+        </li>
+        <li className="navigation-tab">
+          <a
+            className={location.pathname === "/home" ? "active" : ""}
+            href="/home"
+          >
+            Home
+          </a>
+        </li>
+        <li className="navigation-tab">
+          <a href="/home">Discover</a>
+        </li>
+        <li className="navigation-tab">
+          <a
+            className={location.pathname === "/films" ? "active" : ""}
+            href="/films"
+          >
+            Films
+          </a>
+        </li>
+      </ul>
       <div className="second-navigation">
         <div className="nav-element">
-          <form action="" type="GET">
+          <form action="search" type="GET">
             <input
               type="search"
-              name="q"
+              name="find"
               placeholder="Titles, people, genres"
             ></input>
           </form>
         </div>
-
-       
 
         <div className="nav-element">
           <a className="children" href="_Blank">

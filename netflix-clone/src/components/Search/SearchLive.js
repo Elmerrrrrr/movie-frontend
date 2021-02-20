@@ -1,28 +1,23 @@
 import React, { Component } from "react";
-
-
-import { search } from "./utils";
+import { search } from "./Utils";
 import Movies from "./Movies";
 
 class SearchLive extends Component {
   state = {
     movies: null,
     loading: false,
-    value: ""
+    value: "",
   };
 
-  search = async val => {
+  search = async (val) => {
     this.setState({ loading: true });
-    const results = await search(
-      `http://localhost:2021/search/movie/${val}`
-      
-    );
+    const results = await search(`http://localhost:2021/search/movie/${val}`);
     const movies = results;
 
     this.setState({ movies, loading: false });
   };
 
-  onChangeHandler = async e => {
+  onChangeHandler = async (e) => {
     this.search(e.target.value);
     this.setState({ value: e.target.value });
   };
@@ -36,13 +31,26 @@ class SearchLive extends Component {
     return movies;
   }
 
+  get findMovie() {
+    let parts = window.location.search.substr(1).split("&");
+    let searchText = {};
+    for (let i = 0; i < parts.length; i++) {
+      let temp = parts[i].split("=");
+      searchText[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+    }
+    // the search term is searchText["find"] please connect this part to back-end
+
+    return searchText["find"];
+  }
+
   render() {
     return (
       <div className="searchContainer">
+        <p>the results for searching {this.findMovie} are:</p>
         <div>
           <input
             value={this.state.value}
-            onChange={e => this.onChangeHandler(e)}
+            onChange={(e) => this.onChangeHandler(e)}
             placeholder="Type to search"
           />
           {this.renderMovies}
