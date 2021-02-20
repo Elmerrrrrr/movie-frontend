@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
-import SearchBar from "./SearchBar";
 
 function Nav() {
   const location = useLocation();
