@@ -92,27 +92,30 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <button className="buttonLeft" onClick={() => previous()}>
-        <Icon className="leftclick" icon={chevronLeft} />
-      </button>
-      <button className="buttonRight" onClick={() => next()}>
-        <Icon className="rightclick" icon={chevronRight} />
-      </button>
-      <div className="row_posters" ref={ref}>
-        {movies.map((movie) => (
-          <img
-            onMouseOver={onMovieHover(movie)}
-            onClick={() =>
-              movieClicked(movie.name || movie.title || movie.orginal_name)
-            }
-            key={movie.id}
-            className={`row_poster${isRow ? " row_poster" : ""}`}
-            src={`${base_url}${
-              isRow ? movie.poster_path : movie.backdrop_path
-            }`}
-            alt={movie.name}
-          />
-        ))}
+      <div className="scroll">
+        <button className="buttonLeft" onClick={() => previous()}>
+          <Icon className="leftclick" icon={chevronLeft} />
+        </button>
+
+        <div className="row_posters" ref={ref}>
+          {movies.map((movie) => (
+            <img
+              onMouseOver={onMovieHover(movie)}
+              onClick={() =>
+                movieClicked(movie.name || movie.title || movie.orginal_name)
+              }
+              key={movie.id}
+              className={`row_poster${isRow ? " row_poster" : ""}`}
+              src={`${base_url}${
+                isRow ? movie.poster_path : movie.backdrop_path
+              }`}
+              alt={movie.name}
+            />
+          ))}
+        </div>
+        <button className="buttonRight" onClick={() => next()}>
+          <Icon className="rightclick" icon={chevronRight} />
+        </button>
       </div>
 
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}

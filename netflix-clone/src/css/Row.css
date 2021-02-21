@@ -11,9 +11,6 @@ h2 {
   margin-left: 1.25rem;
 }
 
-/* .arrows {
-} */
-
 .buttonLeft {
   background-color: rgba(20, 20, 20, 0.5);
   height: 9rem;
@@ -26,7 +23,7 @@ h2 {
   align-items: center;
 }
 .buttonRight {
-  margin-left: 1360px;
+  right: 0;
   background-color: rgba(20, 20, 20, 0.5);
   height: 9rem;
   width: 5rem;
@@ -36,6 +33,10 @@ h2 {
   display: none;
   position: absolute;
   align-items: center;
+}
+
+.scroll {
+  display: flex;
 }
 
 .buttonLeft .buttonRight:hover {
