@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "../../css/Movie.module.css";
-import { truncStr } from "./Utils";
+import { truncStr } from "./utils";
 
 const MovieCard = props => {
   const { title, poster_path, vote_average } = props.item;

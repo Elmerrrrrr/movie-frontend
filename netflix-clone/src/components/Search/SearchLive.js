@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { search } from "./Utils";
+import { search } from "./utils";
 import Movies from "./Movies";
 
 class SearchLive extends Component {
