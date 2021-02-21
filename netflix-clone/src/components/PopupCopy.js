@@ -35,6 +35,14 @@ function Popup({ movie, trailerUrl, togglePopup }) {
     }
   }
 
+  function searchContent(info) {
+    try {
+      movie?.cast.map((info) => <p>{info.name}</p>);
+    } catch (err) {
+      return err.message;
+    }
+  }
+
   return (
     <div className="modalBg">
       <div className="modalContainer">
@@ -99,15 +107,11 @@ function Popup({ movie, trailerUrl, togglePopup }) {
               <div className="infoRight">
                 <div>
                   <h5>Cast:</h5>
-                  {movie?.cast.map((actor) => (
-                    <p>{actor.name}</p>
-                  ))}
+                  <p>{searchContent("actor")}</p>
                 </div>
                 <div>
                   <h5>Genres:</h5>
-                  {movie?.genres.map((genre) => (
-                    <p>{genre.name}</p>
-                  ))}
+                  <p>{searchContent("genre")}</p>
                 </div>
               </div>
             </div>

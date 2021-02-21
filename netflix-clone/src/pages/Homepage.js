@@ -5,12 +5,9 @@ import Row from "../components/Row";
 import Footer from "../components/Footer_2";
 import requests from "../requests-3";
 import Popup from "../components/Popup";
-import PopupRow from "../components/PopupRow";
-
+import PopupCopy from "../components/PopupCopy";
 
 function Homepage() {
-
-
   const [activeMovieBanner, setActiveMovieBanner] = useState();
   const [trailerUrlBanner, setTrailerUrlBanner] = useState();
 
@@ -18,7 +15,6 @@ function Homepage() {
     setActiveMovieBanner(null);
     setTrailerUrlBanner(null);
   }
-
 
   const [activeMovie, setActiveMovie] = useState();
   const [trailerUrl, setTrailerUrl] = useState();
@@ -32,7 +28,7 @@ function Homepage() {
     <React.Fragment>
       <Nav />
 
-        {activeMovieBanner && trailerUrlBanner && (
+      {activeMovieBanner && trailerUrlBanner && (
         <Popup
           movie={activeMovieBanner}
           trailerUrl={trailerUrlBanner}
@@ -41,14 +37,12 @@ function Homepage() {
       )}
 
       {activeMovie && trailerUrl && (
-        <PopupRow
+        <PopupCopy
           movie={activeMovie}
           trailerUrl={trailerUrl}
           togglePopup={onPopupMoreInfoClick}
         />
       )}
-
-
 
       <Banner
         title="Random"
@@ -56,7 +50,7 @@ function Homepage() {
         setPopupMovie={setActiveMovieBanner}
         setPopupTrailerUrl={setTrailerUrlBanner}
       />
-     
+
       <Row
         title="'80s"
         fetchUrl={requests.fetch80sMovies}
