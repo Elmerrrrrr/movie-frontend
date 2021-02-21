@@ -24,11 +24,13 @@
 .textblock_container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .textblock {
   overflow: hidden;
   display: inline;
+  min-width: 200px;
 }
 
 .textblock a {

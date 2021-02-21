@@ -19,22 +19,39 @@ class Footer extends Component {
 
   render() {
     return (
-      
       <div className="footer2">
         <div className="social_links">
-          <a href="https://www.facebook.com/NetflixNederland" target="_blank"rel="noreferrer"><img src={facebook} alt="FB"/></a>
-          <a href="instagram.com/NetflixNL/" target="_blank"rel="noreferrer"><img src={instagram} alt="INST"/></a>
-          <a href="https://twitter.com/NetflixNL" target="_blank"rel="noreferrer"><img src={twitter} alt="TWIT"/></a>
-          <a href="https://www.youtube.com/user/netflixbenelux" target="_blank"rel="noreferrer"><img src={youtube} alt="YT"/></a>
+          <a
+            href="https://www.facebook.com/NetflixNederland"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={facebook} alt="FB" />
+          </a>
+          <a href="instagram.com/NetflixNL/" target="_blank" rel="noreferrer">
+            <img src={instagram} alt="INST" />
+          </a>
+          <a
+            href="https://twitter.com/NetflixNL"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={twitter} alt="TWIT" />
+          </a>
+          <a
+            href="https://www.youtube.com/user/netflixbenelux"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={youtube} alt="YT" />
+          </a>
         </div>
-         
+
         <div className="textblock_container">
           <div className="textblock">
             <a href="ok">Audio and Subtitles</a>
-            <a href="ok">Help Centre</a>
             <a href="ok">Media Centre</a>
             <a href="ok">Privacy</a>
-            <a href="ok">Contact Us</a>
           </div>
 
           <div className="textblock">
@@ -54,12 +71,13 @@ class Footer extends Component {
             <a href="ok">Terms of use</a>
             <a href="ok">Corporate Information</a>
           </div>
+          <div className="textblock">
+            <a href="ok">Contact Us</a>
+          </div>
         </div>
         <button className="service_Btn">Service Code</button>
         <div className="Copyright">&#169; 1997-2021 Netflix, Inc.</div>
-
-        </div>
-      
+      </div>
     );
   }
 }
