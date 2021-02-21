@@ -63,15 +63,27 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   };
 
   const ref = React.useRef(null);
+  let amountScrolled = 0;
 
   function next() {
     let container = ref.current;
-    sideScroll(container, "right", 5, 500, 2);
+    if (amountScrolled < 19) {
+      sideScroll(container, "right", 5, 500, 2);
+      amountScrolled++;
+    } else {
+      amountScrolled = 19;
+    }
   }
 
   function previous() {
     let container = ref.current;
-    sideScroll(container, "left", 5, 500, 2);
+    if (amountScrolled > 0) {
+      sideScroll(container, "left", 5, 500, 2);
+      amountScrolled--;
+    } else {
+      amountScrolled = 0;
+      alert("we reached the start");
+    }
   }
 
   function sideScroll(element, direction, speed, distance, step) {
@@ -88,14 +100,15 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
       }
     }, speed);
   }
-
   return (
     <div className="row">
       <h2>{title}</h2>
       <div className="scroll">
-        <button className="buttonLeft" onClick={() => previous()}>
-          <Icon className="leftclick" icon={chevronLeft} />
-        </button>
+        <div className="darkL">
+          <button className="buttonLeft" onClick={() => previous()}>
+            <Icon className="leftclick" icon={chevronLeft} />
+          </button>
+        </div>
 
         <div className="row_posters" ref={ref}>
           {movies.map((movie) => (
@@ -113,9 +126,11 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
             />
           ))}
         </div>
-        <button className="buttonRight" onClick={() => next()}>
-          <Icon className="rightclick" icon={chevronRight} />
-        </button>
+        <div className="darkR">
+          <button className="buttonRight" onClick={() => next()}>
+            <Icon className="rightclick" icon={chevronRight} />
+          </button>
+        </div>
       </div>
 
       {trailerUrl !== "" && <YouTube videoId={trailerUrl} opts={youtubeOpts} />}

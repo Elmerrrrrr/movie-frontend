@@ -12,27 +12,41 @@ h2 {
 }
 
 .buttonLeft {
-  background-color: rgba(20, 20, 20, 0.5);
-  height: 9rem;
+  height: 100%;
   width: 5rem;
   color: white;
+  background-color: rgba(20, 20, 20, 0.5);
   border: none;
   outline: none;
   display: none;
-  position: absolute;
+  position: inherit;
   align-items: center;
 }
 .buttonRight {
-  right: 0;
-  background-color: rgba(20, 20, 20, 0.5);
-  height: 9rem;
+  height: 100%;
   width: 5rem;
   color: white;
+  background-color: rgba(20, 20, 20, 0.5);
   border: none;
   outline: none;
   display: none;
-  position: absolute;
+  position: inherit;
   align-items: center;
+}
+
+.darkL {
+  margin-top: 0.65rem;
+  height: 7.58rem;
+  width: 5rem;
+  position: absolute;
+}
+
+.darkR {
+  right: 0;
+  margin-top: 0.65rem;
+  height: 7.58rem;
+  width: 5rem;
+  position: absolute;
 }
 
 .scroll {
