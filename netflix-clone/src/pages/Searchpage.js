@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar";
 import SearchLive from "../components/Search/SearchLive";
 import Spacer from "../components/Spacer";
 import "../css/Searchpage.css";
+import SearchByActor from "../components/Search/SearchMovieByActors";
 
 function SearchPage() {
   const [activeMovie, setActiveMovie] = useState();
@@ -25,7 +26,7 @@ function SearchPage() {
 
     {/* <SearchBar/> */}
     <SearchLive/>
-
+    {/* <SearchByActor/> */}
 
     <Spacer/>
         
