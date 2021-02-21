@@ -99,15 +99,13 @@ function Popup({ movie, trailerUrl, togglePopup }) {
               <div className="infoRight">
                 <div>
                   <h5>Cast:</h5>
-                  {movie.cast.map((actor) => (
-                    <p>
-                      {actor.name} {"as:"} {actor.character}
-                    </p>
+                  {movie?.cast.map((actor) => (
+                    <p>{actor.name}</p>
                   ))}
                 </div>
                 <div>
                   <h5>Genres:</h5>
-                  {movie.genres.map((genre) => (
+                  {movie?.genres.map((genre) => (
                     <p>{genre.name}</p>
                   ))}
                 </div>
