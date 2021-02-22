@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
+import "../css/SearchBar.css";
 
 function Nav() {
   const location = useLocation();
@@ -116,16 +117,28 @@ function Nav() {
           </a>
         </li>
       </ul>
+
+
+
       <div className="second-navigation">
+
         <div className="nav-element">
-          <form action="search" type="GET">
+         <form action="search" type="GET" autocomplete="off">
+          <div className="search-input">
             <input
+              id="searchBox"
               type="search"
               name="find"
               placeholder="Titles, people, genres"
             ></input>
+            <div id="autocom-box" className="autocom-box"></div>
+            </div>
           </form>
         </div>
+        
+
+
+
 
         <div className="nav-element">
           <a className="children" href="_Blank">

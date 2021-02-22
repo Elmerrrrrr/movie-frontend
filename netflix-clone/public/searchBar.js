@@ -1,36 +1,30 @@
-import "../css/SearchBar.css";
-
-
-function SearchBar() {
-
 // getting all required elements
 const searchWrapper = document.querySelector(".search-input");
-const inputBox = document.getElementsByTagName("searchInput");
+const inputBox = document.getElementById("searchBox");
 const suggBox = document.getElementById("autocom-box");
 const icon = document.getElementById("iconSearch");
 let linkTag = document.getElementById("linkElement");
 let webLink;
 let emptyArray = [];
-console.log("test");
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
-    console.log(e);
     let userData = e.target.value; //user enetered data
     emptyArray = [];
     if(userData){
-        icon.onclick = ()=>{
-            webLink = "www.google.com/" + userData;
-            linkTag.setAttribute("href", webLink);
-            console.log(webLink);
-            linkTag.click();
-        }
+    //     icon.onclick = ()=>{
+    //         webLink = "" + userData;
+    //         linkTag.setAttribute("href", webLink);
+    //         console.log(webLink);
+    //         linkTag.click();
+    //     }
         emptyArray = searchActor().filter((data)=>{
             console.log(data.name);
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
         });
         emptyArray = emptyArray.map((data)=>{
-           
+           console.log(data);
             // passing return data inside li tag
             return data = '<li>'+ data.name +'</li>';
         });
@@ -61,9 +55,9 @@ function select(element){
    
     icon.onclick = ()=>{
         webLink = "http://localhost:2021/movies/actor/" + actorId;
-        console.log(webLink);
+        // console.log(webLink);
         let newWebLink = webLink.replace(/,/g,'');
-        console.log(newWebLink);
+        // console.log(newWebLink);
         linkTag.setAttribute("href", newWebLink);
         linkTag.click();
     }
@@ -88,7 +82,7 @@ let resultsFetch;
 
 function searchActor(){
  
-    console.log(resultsFetch);
+    // console.log(resultsFetch);
 
     let baseurl = "http://localhost:2021/search/actors/sug/";
     let inputBox = document.querySelector("input").value;
@@ -107,26 +101,3 @@ function searchActor(){
 
     return resultsFetch;
     }
- 
-
-
-
-  return (
-     
-
-    
-<div className="search-input">
-        <a id="linkElement" href="" target="_blank" hidden></a>
-        <input type="text" id="searchInput" placeholder="Type to search.."></input>
-        <div id="autocom-box" className="autocom-box">
-          {/* <!-- here list are inserted from javascript --> */}
-        </div>
-        
-        <div id="iconSearch" className="icon"><i className="fas fa-search"></i></div>
-      </div>
-     
-          
-  );
-}
-
-export default SearchBar;

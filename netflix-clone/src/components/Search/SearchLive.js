@@ -52,6 +52,7 @@ class SearchLive extends Component {
         <p>the results for searching {this.findMovie} are:</p>
         <div>
           <input
+            id= "searchInputt"
             value={this.state.value}
             onChange={(e) => this.onChangeHandler(e)}
             placeholder="Type to search"

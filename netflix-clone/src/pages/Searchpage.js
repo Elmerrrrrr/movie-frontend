@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer_2";
-import SearchBar from "../components/SearchBar";
+
 import SearchLive from "../components/Search/SearchLive";
 import Spacer from "../components/Spacer";
 import "../css/Searchpage.css";
 import SearchByActor from "../components/Search/SearchMovieByActors";
+import {Helmet} from "react-helmet";
 
 function SearchPage() {
   const [activeMovie, setActiveMovie] = useState();
@@ -24,9 +25,18 @@ function SearchPage() {
 
     <Spacer/>
 
-    {/* <SearchBar/> */}
-    <SearchLive/>
-    {/* <SearchByActor/> */}
+
+
+    {/* <SearchLive/> */}
+    <SearchByActor/>
+
+
+
+    <Helmet>
+           <script src="searchBar.js" type="text/javascript" />
+    </Helmet>
+
+
 
     <Spacer/>
         
