@@ -71,6 +71,7 @@
 }
 
 .menu-trigger {
+  font-size: 13px;
   align-items: center;
   display: flex;
   height: 100%;
@@ -201,6 +202,7 @@ input[type="search"]:focus {
   border-right: 5px solid transparent;
   border-top: 5px solid #e5e5e5;
   margin-left: 0.5rem;
+  margin-top: 1rem;
 }
 
 .triangleUp {
