@@ -34,7 +34,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
       document.querySelector("iframe").requestFullscreen();
     }
   }
-
+  console.log(movie)
   return (
     <div className="modalBg">
       <div className="modalContainer">
