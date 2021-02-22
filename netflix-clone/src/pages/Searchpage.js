@@ -5,7 +5,7 @@ import Footer from "../components/Footer_2";
 import SearchLive from "../components/Search/SearchLive";
 import Spacer from "../components/Spacer";
 import "../css/Searchpage.css";
-import SearchByActor from "../components/Search/SearchMovieByActors";
+import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
 import {Helmet} from "react-helmet";
 
 function SearchPage() {

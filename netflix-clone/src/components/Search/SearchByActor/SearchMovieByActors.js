@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { search } from "./utils";
 import Movies from './Movies';
 
 class SearchByActor extends Component {
@@ -15,7 +15,23 @@ class SearchByActor extends Component {
     const res = await axios(
         `http://localhost:2021/search/actors/${val}`
     );
-    const movies = await res.data.results;
+    let resultss = [];
+   await res.data.results.map((results) => (resultss.push(results.movies_list)));
+    
+    let movies = [];
+
+for (let i = 0; i < resultss.length; i++) {
+  
+  
+  for (let j = 0; j < resultss[i].length; j++) {
+    
+    movies.push(resultss[i][j]);
+  }
+
+}
+  
+      console.log(movies);
+
 
     this.setState({ movies, loading: false });
   };
