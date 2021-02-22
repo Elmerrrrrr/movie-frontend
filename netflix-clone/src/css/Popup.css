@@ -25,14 +25,24 @@
 
 .modal_info {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 0;
   height: 850px;
 }
 
 .Movie-logo {
-  margin-top: 2rem;
-  width: 40%;
+  margin-left: 0.85rem;
+  margin-top: 8rem;
+  width: 20%;
   height: auto;
+}
+.nologo{
+  margin-left: 0.85rem;
+  margin-top: 8rem;
+
+  height: 5rem;
+
 }
 .modalBtns {
   display: flex;
@@ -40,15 +50,15 @@
   align-items: center;
   min-height: 2rem;
   width: 48.34rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3.7rem;
   padding-left: 0.8rem;
-  margin-top: 190px;
+  margin-top: 10px;
   background-image: linear-gradient(
     to bottom,
     rgb(18, 18, 18, 0) 10%,
     rgb(18, 18, 18, 0.5) 30%,
     rgb(18, 18, 18, 0.9) 70%,
-    #181818 100%
+    #181818 80%
   );
 }
 
@@ -60,6 +70,7 @@
   background-color: #181818;
   height: 30rem;
   width: 48.35rem;
+  margin-top: -4rem;
 }
 
 .Movie_info {

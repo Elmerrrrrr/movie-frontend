@@ -35,14 +35,6 @@ function Popup({ movie, trailerUrl, togglePopup }) {
     }
   }
 
-  function searchContent(info) {
-    try {
-      movie?.cast.map((info) => <p>{info.name}</p>);
-    } catch (err) {
-      return err.message;
-    }
-  }
-
   return (
     <div className="modalBg">
       <div className="modalContainer">
@@ -56,33 +48,36 @@ function Popup({ movie, trailerUrl, togglePopup }) {
             playing={trailerPlaying}
             url={trailerUrl}
           />
-        </div>
 
-        <div className="modal_info">
-          <button className="CloseBtn" onClick={togglePopup}>
-            {" "}
-            <Icon className="iconsize" icon={androidClose} />
-          </button>
-
-          <div className="modalBtns">
-            <div>
-              <button className="infoPlay" onClick={onPlayButtonClick}>
-                <Icon className="playInfo" icon={play} />
-                Play
-              </button>
+          <div className="modal_info">
+            <button className="CloseBtn" onClick={togglePopup}>
+              {" "}
+              <Icon className="iconsize" icon={androidClose} />
+            </button>
+            <div
+              className="nologo"
+              
+            />
+            <div className="modalBtns">
+              <div>
+                <button className="infoPlay" onClick={onPlayButtonClick}>
+                  <Icon className="playInfo" icon={play} />
+                  Play
+                </button>
+                <button className="RoundBtn">
+                  <Icon className="iconsize" icon={plus} />
+                </button>
+                <button className="RoundBtn">
+                  <Icon icon={thumbsUp} />
+                </button>
+                <button className="RoundBtn">
+                  <Icon icon={thumbsDown} />
+                </button>
+              </div>
               <button className="RoundBtn">
-                <Icon className="iconsize" icon={plus} />
-              </button>
-              <button className="RoundBtn">
-                <Icon icon={thumbsUp} />
-              </button>
-              <button className="RoundBtn">
-                <Icon icon={thumbsDown} />
+                <Icon className="Mute" icon={music_mute} />
               </button>
             </div>
-            <button className="RoundBtn">
-              <Icon className="Mute" icon={music_mute} />
-            </button>
           </div>
 
           <div className="modal_Description">
@@ -104,16 +99,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
                   <h4>{movie?.runtime} Min</h4>
                 </div>
               </div>
-              <div className="infoRight">
-                <div>
-                  <h5>Cast:</h5>
-                  <p>{searchContent("actor")}</p>
-                </div>
-                <div>
-                  <h5>Genres:</h5>
-                  <p>{searchContent("genre")}</p>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>

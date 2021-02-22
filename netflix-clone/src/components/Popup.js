@@ -48,33 +48,37 @@ function Popup({ movie, trailerUrl, togglePopup }) {
             playing={trailerPlaying}
             url={trailerUrl}
           />
-        </div>
 
-        <div className="modal_info">
-          <button className="CloseBtn" onClick={togglePopup}>
-            {" "}
-            <Icon className="iconsize" icon={androidClose} />
-          </button>
-
-          <div className="modalBtns">
-            <div>
-              <button className="infoPlay" onClick={onPlayButtonClick}>
-                <Icon className="playInfo" icon={play} />
-                Play
-              </button>
+          <div className="modal_info">
+            <button className="CloseBtn" onClick={togglePopup}>
+              {" "}
+              <Icon className="iconsize" icon={androidClose} />
+            </button>
+            <img
+              className="Movie-logo"
+              src={`${movie?.movielogos[0].url_hd}`}
+              alt="logo"
+            />
+            <div className="modalBtns">
+              <div>
+                <button className="infoPlay" onClick={onPlayButtonClick}>
+                  <Icon className="playInfo" icon={play} />
+                  Play
+                </button>
+                <button className="RoundBtn">
+                  <Icon className="iconsize" icon={plus} />
+                </button>
+                <button className="RoundBtn">
+                  <Icon icon={thumbsUp} />
+                </button>
+                <button className="RoundBtn">
+                  <Icon icon={thumbsDown} />
+                </button>
+              </div>
               <button className="RoundBtn">
-                <Icon className="iconsize" icon={plus} />
-              </button>
-              <button className="RoundBtn">
-                <Icon icon={thumbsUp} />
-              </button>
-              <button className="RoundBtn">
-                <Icon icon={thumbsDown} />
+                <Icon className="Mute" icon={music_mute} />
               </button>
             </div>
-            <button className="RoundBtn">
-              <Icon className="Mute" icon={music_mute} />
-            </button>
           </div>
 
           <div className="modal_Description">

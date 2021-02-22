@@ -14,6 +14,9 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [hoveredMovieDetails, setHoveredMovieDetails] = useState(null);
+  const ref = React.useRef(null);
+  const [amountScrolled, setAmountScrolled] = useState(0);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -62,16 +65,17 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
     });
   };
 
-  const ref = React.useRef(null);
-  let amountScrolled = 0;
+
 
   function next() {
     let container = ref.current;
     if (amountScrolled < 19) {
       sideScroll(container, "right", 5, 500, 2);
-      amountScrolled++;
+      setAmountScrolled(amountScrolled +1)
+      
     } else {
-      amountScrolled = 19;
+    
+      setAmountScrolled(19)
     }
   }
 
@@ -79,10 +83,11 @@ function Row({ title, fetchUrl, isRow, setPopupMovie, setPopupTrailerUrl }) {
     let container = ref.current;
     if (amountScrolled > 0) {
       sideScroll(container, "left", 5, 500, 2);
-      amountScrolled--;
+      setAmountScrolled(amountScrolled -1)
     } else {
-      amountScrolled = 0;
-      alert("we reached the start");
+
+      setAmountScrolled(0)
+      
     }
   }
 

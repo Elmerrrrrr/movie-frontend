@@ -38,11 +38,8 @@ class SearchLive extends Component {
       let temp = parts[i].split("=");
       searchText[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
     }
-    // the search term is searchText["find"] please connect this part to back-end
-    // this.search(searchText["find"]);
-    // this.search(setState({value: searchText["find"]})); doesn't work
-    // the default searchbar was already working so the new one has been Kamehamehahahahhaha
-
+    // this is the connection, werkt nogsteeds niet ik heb het opgevraagd???// 
+   this.onChangeHandler(searchText["find"]);
     return searchText["find"];
   }
 
