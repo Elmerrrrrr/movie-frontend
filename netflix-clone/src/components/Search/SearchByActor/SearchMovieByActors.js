@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { search } from "./utils";
 import Movies from './Movies';
+import "../../../css/SearchBar.css";
 
 class SearchByActor extends Component {
   state = {
@@ -12,23 +13,10 @@ class SearchByActor extends Component {
 
   search = async val => {
     this.setState({ loading: true });
-    const res = await axios(
+    const results = await search(
         `http://localhost:2021/search/actors/${val}`
     );
-    let resultss = [];
-   await res.data.results.map((results) => (resultss.push(results.movies_list)));
-    
-    let movies = [];
-
-for (let i = 0; i < resultss.length; i++) {
-  
-  
-  for (let j = 0; j < resultss[i].length; j++) {
-    
-    movies.push(resultss[i][j]);
-  }
-
-}
+    const movies = results;
   
       console.log(movies);
 
@@ -42,7 +30,7 @@ for (let i = 0; i < resultss.length; i++) {
   };
 
   get renderMovies() {
-    let movies = <h1>Search by Actors</h1>;
+    let movies = "";
     if (this.state.movies) {
       movies = <Movies list={this.state.movies} />;
     }
@@ -52,12 +40,17 @@ for (let i = 0; i < resultss.length; i++) {
 
   render() {
     return (
-      <div>
+      <div className="searchActorContainer">
+        <div className="search-input">
         <input
+          autocomplete="off"
+          id="searchBox"
           value={this.state.value}
           onChange={e => this.onChangeHandler(e)}
-          placeholder="Type something to search"
+          placeholder="Search by actor, director"
         />
+        <div id="autocom-box" className="autocom-box"></div>
+        </div>
         {this.renderMovies}
       </div>
     );

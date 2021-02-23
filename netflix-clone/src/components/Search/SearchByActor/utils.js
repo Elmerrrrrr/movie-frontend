@@ -27,8 +27,28 @@ const makeRequestCreator = () => {
         return resources[query];
       }
       const res = await axios(query, { cancelToken: cancel.token });
+      
+      const result = [];
 
-      const result = res.data.results;
+     
+// ----------
+
+      let resultsSearch = [];
+      resultsSearch= res.data.results.map((results) => (results.movies_list));
+      console.log(resultsSearch);
+          
+       for (let i = 0; i < resultsSearch.length; i++) {
+         
+         for (let j = 0; j < resultsSearch[i].length; j++) {
+           
+           result.push(resultsSearch[i][j]);
+         }
+       }
+     
+         console.log(result);
+
+// ----------
+      
       // Store response
       resources[query] = result;
 

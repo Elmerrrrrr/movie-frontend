@@ -1,5 +1,5 @@
 import Movie from "./Movie";
-import classes from "../../css/Movies.module.css";
+import classes from "../../../css/Movies.module.css";
 import React from "react";
 
 

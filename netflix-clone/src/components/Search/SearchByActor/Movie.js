@@ -19,7 +19,7 @@ const MovieCard = props => {
       </div>
 
       <div className={classes.Bottom}>
-        <h3 className={classes.Title}>{title}</h3>
+        <h3 className={classes.Title}>{truncStr(title, 19)}</h3>
       </div>
     </div>
   );

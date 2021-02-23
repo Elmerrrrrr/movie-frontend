@@ -4,6 +4,7 @@ import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
 import "../css/SearchBar.css";
+import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
 
 function Nav() {
   const location = useLocation();
@@ -124,14 +125,15 @@ function Nav() {
 
         <div className="nav-element">
          <form action="search" type="GET" autocomplete="off">
-          <div className="search-input">
+          <div className="search-input1">
+         
             <input
-              id="searchBox"
+              id="searchBox1"
               type="search"
-              name="find"
-              placeholder="Titles, people, genres"
+              // name="query"
+              placeholder="Actors, directors, people"
             ></input>
-            <div id="autocom-box" className="autocom-box"></div>
+            <div id="autocom-box1" className="autocom-box1"></div>
             </div>
           </form>
         </div>

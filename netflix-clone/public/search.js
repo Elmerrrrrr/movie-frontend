@@ -1,16 +1,16 @@
 // getting all required elements
-const searchWrapper1 = document.querySelector(".search-input1");
-const inputBox1 = document.getElementById("searchBox1");
-const suggBox1 = document.getElementById("autocom-box1");
-const icon1 = document.getElementById("iconSearch1");
-let linkTag1 = document.getElementById("linkElement1");
-let webLink1;
-let emptyArray1 = [];
-console.log("Check!!1");
+const searchWrapper = document.querySelector(".search-input");
+const inputBox = document.getElementById("searchBox");
+const suggBox = document.getElementById("autocom-box");
+const icon = document.getElementById("iconSearch");
+let linkTag = document.getElementById("linkElement");
+let webLink;
+let emptyArray = [];
+console.log("Check!!");
 // if user press any key and release
-inputBox1.onkeyup = (e)=>{
+inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
-    emptyArray1 = [];
+    emptyArray = [];
     if(userData){
     //     icon.onclick = ()=>{
     //         webLink = "" + userData;
@@ -18,19 +18,19 @@ inputBox1.onkeyup = (e)=>{
     //         console.log(webLink);
     //         linkTag.click();
     //     }
-        emptyArray1 = searchActor1().filter((data)=>{
+        emptyArray = searchActor().filter((data)=>{
             // console.log(data.name);
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
         });
-        emptyArray1 = emptyArray1.map((data)=>{
+        emptyArray = emptyArray.map((data)=>{
         //    console.log(data);
             // passing return data inside li tag
             return data = '<li>'+ data.name +'</li>';
         });
-        searchWrapper1.classList.add("active"); //show autocomplete box
-        showSuggestions1(emptyArray1);
-        let allList = suggBox1.querySelectorAll("li");
+        searchWrapper.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+        let allList = suggBox.querySelectorAll("li");
         for (let i = 0; i < allList.length; i++) {
             //adding onclick attribute in all li tag
             // console.log(allList[i]);
@@ -38,54 +38,54 @@ inputBox1.onkeyup = (e)=>{
             allList[i].setAttribute("onclick", "select(this)");
         }
     }else{
-        searchWrapper1.classList.remove("active"); //hide autocomplete box
+        searchWrapper.classList.remove("active"); //hide autocomplete box
     }
 }
 
 function select(element){
     let selectData = element.textContent;
-    inputBox1.value = selectData;
+    inputBox.value = selectData;
     
-    let actorId = resultsFetch1.map((data)=>{
-         if(data.name === selectData){
-             console.log(data.id);
-             return data.id
-         }  
-    });
+    // let actorId = resultsFetch.map((data)=>{
+    //      if(data.name === selectData){
+    //          console.log(data.id);
+    //          return data.id
+    //      }  
+   // });
    
-//    icon1.onclick = ()=>{
-//         webLink1 = "http://localhost:2021/movies/actor/" + actorId;
-//         // console.log(webLink);
-//         let newWebLink = webLink1.replace(/,/g,'');
-//         // console.log(newWebLink);
-//         linkTag1.setAttribute("href", newWebLink);
-//         linkTag1.click();
-//    }
-    searchWrapper1.classList.remove("active");
+    // icon.onclick = ()=>{
+    //     webLink = "http://localhost:2021/movies/actor/" + actorId;
+    //     // console.log(webLink);
+    //     let newWebLink = webLink.replace(/,/g,'');
+    //     // console.log(newWebLink);
+    //     linkTag.setAttribute("href", newWebLink);
+    //     linkTag.click();
+    // }
+    searchWrapper.classList.remove("active");
 }
 
 
-function showSuggestions1(list){
+function showSuggestions(list){
     let listData;
     if(!list.length){
-        let userValue = inputBox1.value;
+        let userValue = inputBox.value;
         listData = '<li>'+ userValue +'</li>';
     }else{
         listData = list.join('');
     }
-    suggBox1.innerHTML = listData;
+    suggBox.innerHTML = listData;
 }
 
 
 
-let resultsFetch1;
+let resultsFetch;
 
-function searchActor1(){
+function searchActor(){
  
     // console.log(resultsFetch);
 
     let baseurl = "http://localhost:2021/search/actors/sug/";
-    let inputBox = document.getElementById("searchBox1").value;
+    let inputBox = document.getElementById("searchBox").value;
     
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET",baseurl + inputBox,true);
@@ -93,11 +93,11 @@ function searchActor1(){
     xmlhttp.onreadystatechange = function() {
     
       if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
-        resultsFetch1 = JSON.parse(xmlhttp.responseText);
+        resultsFetch = JSON.parse(xmlhttp.responseText);
         // console.log(resultsFetch);
       }
     };
     xmlhttp.send();
 
-    return resultsFetch1;
+    return resultsFetch;
     }

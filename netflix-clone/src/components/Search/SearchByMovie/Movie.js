@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../css/Movie.module.css";
+import classes from "../../../css/Movie.module.css";
 import { truncStr } from "./utils";
 
 const MovieCard = props => {

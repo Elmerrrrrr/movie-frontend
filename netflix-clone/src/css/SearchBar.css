@@ -1,21 +1,21 @@
 @import "./fonts.css";
 
-  /* ::selection{
+  ::selection{
     color: #131212;
     background: #9390a7;
-  } */
+  }
   
-/*   
-  .search-input{
+  
+  /* .search-input1{
     background: #fff;
     width: 100%;
     margin-top: 0px;
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-  }
-   */
-  /* .search-input input{
+  } */
+  
+  /* .search-input1 input{
     height: 55px;
     width: 100%;
     outline: none;
@@ -24,17 +24,17 @@
     padding: 0 60px 0 20px;
     font-size: 18px;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-  } */
-  
+  }
+   */
 
-  .search-input.active input{
+  .search-input1.active input{
     border-radius: 5px 5px 0 0;
   }
   
-  .search-input .autocom-box{
+  .search-input1 .autocom-box1{
     position: absolute;
     left: -15px;
-    top: 60px;
+    top: 70px;
     z-index: 50;
     padding: 0;
     opacity: 0;
@@ -44,17 +44,19 @@
     border-radius: 30px;
     background-color: rgba(22, 21, 21, 0.7);
     border-radius: 5px;
+    width: 255px;
     
   }
   
-  .search-input.active .autocom-box{
+  .search-input1.active .autocom-box1{
     padding: 5px 8px;
     opacity: 0.9;
     pointer-events: auto;
     
+    
   }
   
-  .autocom-box li{
+  .autocom-box1 li{
     list-style: none;
     padding: 8px 12px;
     display: none;
@@ -64,14 +66,15 @@
     color: white;
   }
   
-  .search-input.active .autocom-box li{
+  .search-input1.active .autocom-box1 li{
     display: block;
   }
-  .autocom-box li:hover{
+  .autocom-box1 li:hover{
     background: #efefef;
+    color: black;
   }
   
-  /* .search-input .icon{
+  .search-input1 .icon1{
     position: absolute;
     right: 0px;
     top: 0px;
@@ -82,7 +85,7 @@
     font-size: 20px;
     color: #2b2b2b;
     cursor: pointer;
-  } */
+  }
   
 
   input[type="search"] {

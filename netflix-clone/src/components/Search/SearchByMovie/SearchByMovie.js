@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { search } from "./utils";
 import Movies from "./Movies";
 
-class SearchLive extends Component {
+class SearchByActor extends Component {
   state = {
     movies: null,
     loading: false,
@@ -23,7 +23,7 @@ class SearchLive extends Component {
   };
 
   get renderMovies() {
-    let movies = <h1>Search movies</h1>;
+    let movies = "";
     if (this.state.movies) {
       movies = <Movies list={this.state.movies} />;
     }
@@ -38,22 +38,22 @@ class SearchLive extends Component {
       let temp = parts[i].split("=");
       searchText[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
     }
-    // this is the connection, werkt nogsteeds niet ik heb het opgevraagd???// 
-   this.onChangeHandler(searchText["find"]);
-    return searchText["find"];
+
+
   }
 
   render() {
     return (
       <div className="searchContainer">
-        <p>the results for searching {this.findMovie} are:</p>
-        <div>
+       <div>
           <input
-            id= "searchInputt"
+            autocomplete="off"
+            id= "searchInput"
             value={this.state.value}
             onChange={(e) => this.onChangeHandler(e)}
-            placeholder="Type to search"
+            placeholder="Search by movie names"
           />
+          <div id="autocom-box-movie" className="autocom-box-movie"></div>
           {this.renderMovies}
         </div>
       </div>
@@ -61,4 +61,4 @@ class SearchLive extends Component {
   }
 }
 
-export default SearchLive;
+export default SearchByActor;
