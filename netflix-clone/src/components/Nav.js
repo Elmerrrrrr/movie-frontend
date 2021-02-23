@@ -4,9 +4,9 @@ import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
 import "../css/SearchBar.css";
-import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
+// import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
 
-function Nav() {
+function Nav(getValue) {
   const location = useLocation();
   const [show, handleShow] = useState(false);
 
@@ -130,6 +130,7 @@ function Nav() {
             <input
               id="searchBox1"
               type="search"
+              onChange={getValue}
               // name="query"
               placeholder="Actors, directors, people"
             ></input>

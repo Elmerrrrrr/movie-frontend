@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { search } from "./utils";
 import Movies from "./Movies";
+import "../../../css/Search.css";
 
 class SearchByActor extends Component {
   state = {
@@ -44,8 +45,8 @@ class SearchByActor extends Component {
 
   render() {
     return (
-      <div className="searchContainer">
-       <div>
+      <div className="searchMovieContainer">
+       <div className="search-input-movie">
           <input
             autocomplete="off"
             id= "searchInput"

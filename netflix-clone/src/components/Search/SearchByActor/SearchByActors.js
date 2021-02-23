@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import axios from 'axios';
 import { search } from "./utils";
 import Movies from './Movies';
-import "../../../css/SearchBar.css";
+import "../../../css/Search.css";
 
 class SearchByActor extends Component {
   state = {
@@ -23,6 +23,8 @@ class SearchByActor extends Component {
 
     this.setState({ movies, loading: false });
   };
+
+  
 
   onChangeHandler = async e => {
     this.search(e.target.value);

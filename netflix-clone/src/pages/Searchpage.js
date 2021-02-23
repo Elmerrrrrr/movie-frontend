@@ -6,31 +6,39 @@ import SearchByMovie from "../components/Search/SearchByMovie/SearchByMovie";
 import Spacer from "../components/Spacer";
 import "../css/Searchpage.css";
 import "../css/Search.css";
-import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
+import SearchByActor from "../components/Search/SearchByActor/SearchByActors";
 import {Helmet} from "react-helmet";
 
 
 
 function SearchPage() {
-  const [activeMovie, setActiveMovie] = useState();
-  const [trailerUrl, setTrailerUrl] = useState();
+  // const [activeMovie, setActiveMovie] = useState();
+  // const [trailerUrl, setTrailerUrl] = useState();
+  const [value, setValue] = useState();
 
-  function onPopupMoreInfoClick() {
-    setActiveMovie(null);
-    setTrailerUrl(null);
-  }
+  // function onPopupMoreInfoClick() {
+  //   setActiveMovie(null);
+  //   setTrailerUrl(null);
+  // }
+
+const getValue = (event) =>{
+  setValue(event.target.value)
+
+}
+
+
 
   return (
 <>
 
           
-    <Nav />
+    <Nav SetValueE={getValue}/>
 
     <Spacer/>
 
 
 
-    <SearchByActor/>
+    <SearchByActor value={value} />
     
   
     <SearchByMovie/>

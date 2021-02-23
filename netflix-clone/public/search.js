@@ -6,7 +6,7 @@ const icon = document.getElementById("iconSearch");
 let linkTag = document.getElementById("linkElement");
 let webLink;
 let emptyArray = [];
-console.log("Check!!");
+// console.log("Check!!");
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data

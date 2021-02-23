@@ -1,15 +1,9 @@
-.searchContainer {
+.searchActorContainer, .searchMovieContainer{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
+  margin-left:75px;
   padding: 50px;
 }
 
 
-.searchActorContainer{
-
-  position: relative;
-  margin-left:75px;
-
-}

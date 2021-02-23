@@ -6,7 +6,7 @@ const icon1 = document.getElementById("iconSearch1");
 let linkTag1 = document.getElementById("linkElement1");
 let webLink1;
 let emptyArray1 = [];
-console.log("Check!!1");
+// console.log("Check!!1");
 // if user press any key and release
 inputBox1.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
@@ -22,7 +22,7 @@ inputBox1.onkeyup = (e)=>{
             // console.log(data.name);
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
-        });
+       });
         emptyArray1 = emptyArray1.map((data)=>{
         //    console.log(data);
             // passing return data inside li tag
