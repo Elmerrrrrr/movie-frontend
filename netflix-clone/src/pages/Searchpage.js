@@ -27,21 +27,20 @@ const getValue = (event) =>{
 }
 
 
-
   return (
 <>
 
           
-    <Nav SetValueE={getValue}/>
+    <Nav setValue={getValue}/>
 
     <Spacer/>
 
 
 
-    <SearchByActor value={value} />
+    <SearchByActor />
     
   
-    <SearchByMovie/>
+    {/* <SearchByMovie/> */}
 
 
   <Helmet>

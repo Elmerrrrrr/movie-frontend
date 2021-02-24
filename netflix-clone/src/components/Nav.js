@@ -7,6 +7,7 @@ import "../css/SearchBar.css";
 // import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
 
 function Nav(getValue) {
+
   const location = useLocation();
   const [show, handleShow] = useState(false);
 
@@ -130,7 +131,7 @@ function Nav(getValue) {
             <input
               id="searchBox1"
               type="search"
-              onChange={getValue}
+              // onChange={getValue}
               // name="query"
               placeholder="Actors, directors, people"
             ></input>

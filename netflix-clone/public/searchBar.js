@@ -1,6 +1,7 @@
 // getting all required elements
 const searchWrapper1 = document.querySelector(".search-input1");
 const inputBox1 = document.getElementById("searchBox1");
+
 const suggBox1 = document.getElementById("autocom-box1");
 const icon1 = document.getElementById("iconSearch1");
 let linkTag1 = document.getElementById("linkElement1");
@@ -44,7 +45,7 @@ inputBox1.onkeyup = (e)=>{
 
 function select(element){
     let selectData = element.textContent;
-    inputBox1.value = selectData;
+    inputBox.value = selectData;
     
     let actorId = resultsFetch1.map((data)=>{
          if(data.name === selectData){
