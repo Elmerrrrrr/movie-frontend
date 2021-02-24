@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import React, { useState, useEffect } from "react";
-// import axios from 'axios';
+
+import React, { Component, useState, useEffect } from "react";
 import { search } from "./utils";
 import Movies from './Movies';
 import "../../../css/Search.css";
 
 function SearchByActor(){
-  
+
   const [movies, setMovies] = useState();
   const [loading, setLoading] = useState();
   const [value, setValue] = useState();
