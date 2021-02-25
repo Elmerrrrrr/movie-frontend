@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
+import "../../../css/SearchBar.css";
 // import axios from 'axios';
 import { search } from "./utils";
 import Movies from './Movies';
-import "../../../css/Search.css";
+// import "../../../css/Search.css";
 
 class SearchByActor extends Component {
   state = {
@@ -28,7 +28,10 @@ class SearchByActor extends Component {
   
 
   onChangeHandler = async e => {
+    // this.search(this.props.value);
+
     this.search(e.target.value);
+    // this.setState({ value: e.target.value });
     this.setState({ value: e.target.value });
   };
 
@@ -47,6 +50,7 @@ class SearchByActor extends Component {
         <div className="search-input">
         <input
           autocomplete="off"
+          type="search"
           id="searchBox"
           value={this.state.value}
           onChange={e => this.onChangeHandler(e)}

@@ -5,7 +5,7 @@
     background: #9390a7;
   }
   
-  
+/*   
   .search-input, .search-input-movie{
     background: #fff;
     width: 300px;
@@ -13,13 +13,18 @@
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-  }
+  } */
+
   
   .search-input input, .search-input-movie input{
-    height: 55px;
-    width: 100%;
-    outline: none;
-    border: none;
+    position: absolute;
+    z-index: 50;
+    top: 15px;
+    left: 55%;
+    /* height: 55px; */
+    /* width: 100%; */
+    /* outline: none; */
+    /* border: none; */
     border-radius: 5px;
     padding: 0 60px 0 20px;
     font-size: 18px;
@@ -32,18 +37,23 @@
   }
   
   .search-input .autocom-box{
+    width: 240px;
+
     position: relative;
-    /* left: -15px;
-    top: 190px; */
+    z-index: 50;
+    left: 50%;
+    top: 10px;
     z-index: 50;
     padding: 0;
     opacity: 0;
     pointer-events: none;
     max-height: 280px;
     overflow-y: auto;
+    overflow-x: auto;
     border-radius: 30px;
-    /* background-color: rgba(22, 21, 21, 0.7); */
+    background-color: rgba(22, 21, 21, 0.7);
     border-radius: 5px;
+    color: #efefef;
     
   }
   
@@ -56,12 +66,12 @@
   
   .autocom-box li{
     list-style: none;
-    padding: 8px 12px;
+    padding: 8px 8px;
     display: none;
     width: 100%;
     cursor: default;
     border-radius: 3px;
-    color: rgb(29, 27, 27);
+    /* color: rgb(29, 27, 27); */
   }
   
   .search-input.active .autocom-box li{
@@ -72,7 +82,7 @@
     color: black;
   }
   
-  .search-input .icon{
+  /* .search-input .icon{
     position: absolute;
     right: 0px;
     top: 0px;
@@ -84,5 +94,48 @@
     color: #2b2b2b;
     cursor: pointer;
   } 
-   
+    */
 
+   input[type="search"] {
+    width: 230px;
+    /* width: 0px; */
+    border: none;
+    background-image: url("../img/Marisearch.png");
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 1.2rem;
+    background-color: rgb(0, 0, 0, 0);
+    padding: 12px 0px 5px 40px;
+    padding-top: 9px;
+    transition: width 0.2s ease-in-out;
+    font-size: 0.8rem;
+    color: #e5e5e5;
+    cursor: pointer;
+  }
+  
+ input[type="search"]::placeholder {
+    font-size: 1rem;
+  }
+  
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 0.8rem;
+    width: 0.8rem;
+    background: url("../images/xmark.png") no-repeat;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+    padding-bottom: 5px;
+  }
+  
+  input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  input[type="search"]:focus,  .autocom-box li{
+    padding-left: 40px;
+    padding-bottom: 10px;
+    width: 200px;
+    background-position: 5px;
+  }  

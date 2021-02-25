@@ -1,10 +1,10 @@
 // getting all required elements
-const searchWrapper1 = document.querySelector(".search-input1");
-const inputBox1 = document.getElementById("searchBox1");
+const searchWrapper1 = document.querySelector(".search-input");
+const inputBox1 = document.getElementById("searchBox");
 
-const suggBox1 = document.getElementById("autocom-box1");
-const icon1 = document.getElementById("iconSearch1");
-let linkTag1 = document.getElementById("linkElement1");
+const suggBox1 = document.getElementById("autocom-box");
+const icon1 = document.getElementById("iconSearch");
+let linkTag1 = document.getElementById("linkElement");
 let webLink1;
 let emptyArray1 = [];
 // console.log("Check!!1");
@@ -37,6 +37,7 @@ inputBox1.onkeyup = (e)=>{
             // console.log(allList[i]);
            
             allList[i].setAttribute("onclick", "select(this)");
+            
         }
     }else{
         searchWrapper1.classList.remove("active"); //hide autocomplete box
@@ -45,14 +46,14 @@ inputBox1.onkeyup = (e)=>{
 
 function select(element){
     let selectData = element.textContent;
-    inputBox.value = selectData;
+    inputBox1.value = selectData;
     
-    let actorId = resultsFetch1.map((data)=>{
-         if(data.name === selectData){
-             console.log(data.id);
-             return data.id
-         }  
-    });
+    // let actorId = resultsFetch1.map((data)=>{
+    //      if(data.name === selectData){
+    //          console.log(data.id);
+    //          return data.id
+    //      }  
+    // });
    
 //    icon1.onclick = ()=>{
 //         webLink1 = "http://localhost:2021/movies/actor/" + actorId;
@@ -86,7 +87,7 @@ function searchActor1(){
     // console.log(resultsFetch);
 
     let baseurl = "http://localhost:2021/search/actors/sug/";
-    let inputBox = document.getElementById("searchBox1").value;
+    let inputBox = document.getElementById("searchBox").value;
     
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET",baseurl + inputBox,true);

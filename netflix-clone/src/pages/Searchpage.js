@@ -5,39 +5,50 @@ import Footer from "../components/Footer_2";
 import SearchByMovie from "../components/Search/SearchByMovie/SearchByMovie";
 import Spacer from "../components/Spacer";
 import "../css/Searchpage.css";
-import "../css/Search.css";
+import "../css/SearchBar.css";
+
 import SearchByActor from "../components/Search/SearchByActor/SearchByActors";
 import {Helmet} from "react-helmet";
 
 
 
 function SearchPage() {
-  // const [activeMovie, setActiveMovie] = useState();
-  // const [trailerUrl, setTrailerUrl] = useState();
-  const [value, setValue] = useState();
 
-  // function onPopupMoreInfoClick() {
-  //   setActiveMovie(null);
-  //   setTrailerUrl(null);
-  // }
+const [value, setValue] = useState();
 
-const getValue = (event) =>{
-  setValue(event.target.value)
+let input = document.getElementById("searchBox1");
+console.log(input);
 
+
+const getValue = (event) => {
+  // console.log(event.target.value);
+  // setValue(event.target.value);
+  setValue(input.value);
+  console.log(input.value);
 }
+
+
+
+// element.onchange = function() {
+//   console.log(element);
+// }
+
 
 
   return (
 <>
 
           
-    <Nav setValue={getValue}/>
-
+    <Nav getValue={getValue}/>
+    
+    <div className="searchContainerNav">
+              <SearchByActor />
+          </div>
     <Spacer/>
 
 
 
-    <SearchByActor />
+    {/* <SearchByActor value={value} /> */}
     
   
     {/* <SearchByMovie/> */}
@@ -48,15 +59,15 @@ const getValue = (event) =>{
   </Helmet>
 
 
-    <Helmet>
-           <script src="searchBar.js" type="text/javascript" />
-    </Helmet>
+  <Helmet>
+          <script src="searchBar.js" type="text/javascript" />
+  </Helmet>
 
  
 
 
 
-    <Spacer/>
+    {/* <Spacer/> */}
         
     <Footer />
 </>

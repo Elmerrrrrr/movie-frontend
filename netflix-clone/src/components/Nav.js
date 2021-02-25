@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
-import "../css/SearchBar.css";
-// import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
+// import "../css/SearchBar.css";
+import SearchByActor from "../components/Search/SearchByActor/SearchByActors";
 
 function Nav(getValue) {
 
@@ -125,7 +125,8 @@ function Nav(getValue) {
       <div className="second-navigation">
 
         <div className="nav-element">
-         <form action="search" type="GET" autocomplete="off">
+   
+         {/* <form action="search" type="GET" autocomplete="off">
           <div className="search-input1">
          
             <input
@@ -137,7 +138,7 @@ function Nav(getValue) {
             ></input>
             <div id="autocom-box1" className="autocom-box1"></div>
             </div>
-          </form>
+          </form> */}
         </div>
         
 
