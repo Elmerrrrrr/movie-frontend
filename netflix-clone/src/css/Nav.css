@@ -112,7 +112,7 @@
   margin-right: 23px;
 }
 
-/* input[type="search"] {
+input[type="search"] {
   width: 0px;
   border: none;
   background-image: url("../img/Marisearch.png");
@@ -153,11 +153,7 @@ input[type="search"]:focus {
   width: 255px;
   background-position: 5px;
   background-color: rgb(0, 0, 0, 0.7);
-} */
-
-
-
-
+}
 
 .navImg {
   height: 1.3rem;

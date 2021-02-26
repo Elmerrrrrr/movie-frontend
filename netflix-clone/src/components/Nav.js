@@ -3,11 +3,8 @@ import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import gift from "../images/Marigifts.png";
 import bell from "../images/Maribells.png";
-import "../css/SearchBar.css";
-// import SearchByActor from "../components/Search/SearchByActor/SearchMovieByActors";
 
-function Nav(getValue) {
-
+function Nav() {
   const location = useLocation();
   const [show, handleShow] = useState(false);
 
@@ -119,30 +116,16 @@ function Nav(getValue) {
           </a>
         </li>
       </ul>
-
-
-
       <div className="second-navigation">
-
         <div className="nav-element">
-         <form action="search" type="GET" autocomplete="off">
-          <div className="search-input1">
-         
+          <form action="search" type="GET">
             <input
-              id="searchBox1"
               type="search"
-              // onChange={getValue}
-              // name="query"
-              placeholder="Actors, directors, people"
+              name="find"
+              placeholder="Titles, people, genres"
             ></input>
-            <div id="autocom-box1" className="autocom-box1"></div>
-            </div>
           </form>
         </div>
-        
-
-
-
 
         <div className="nav-element">
           <a className="children" href="_Blank">

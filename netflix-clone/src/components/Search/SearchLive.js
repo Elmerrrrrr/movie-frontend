@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { search } from "./utils";
+import { search } from "./Utils";
 import Movies from "./Movies";
-import "../../../css/Search.css";
+import "../../css/SearchLive.css";
 
-class SearchByActor extends Component {
+class SearchLive extends Component {
   state = {
     movies: null,
     loading: false,
-    value: "",
+    value: this.findMovie || "",
   };
 
   search = async (val) => {
@@ -24,7 +24,7 @@ class SearchByActor extends Component {
   };
 
   get renderMovies() {
-    let movies = "";
+    let movies = <div></div>;
     if (this.state.movies) {
       movies = <Movies list={this.state.movies} />;
     }
@@ -40,21 +40,20 @@ class SearchByActor extends Component {
       searchText[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
     }
 
-
+    return searchText["find"];
   }
 
   render() {
     return (
-      <div className="searchMovieContainer">
-       <div className="search-input-movie">
+      <div className="searchContainer">
+        <div>
           <input
-            autocomplete="off"
-            id= "searchInput"
+            className="keyword"
+            type="searchbar"
             value={this.state.value}
             onChange={(e) => this.onChangeHandler(e)}
-            placeholder="Search by movie names"
+            placeholder="Search by actor, director"
           />
-          <div id="autocom-box-movie" className="autocom-box-movie"></div>
           {this.renderMovies}
         </div>
       </div>
@@ -62,4 +61,4 @@ class SearchByActor extends Component {
   }
 }
 
-export default SearchByActor;
+export default SearchLive;

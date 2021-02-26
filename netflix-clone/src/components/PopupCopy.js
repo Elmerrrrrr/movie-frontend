@@ -11,6 +11,7 @@ import "../css/Popup.css";
 
 function Popup({ movie, trailerUrl, togglePopup }) {
   const [trailerPlaying, setTrailerPlaying] = useState(false);
+  const [silence, setSilence] = useState(false);
 
   useEffect(() => {
     document.body.style.position = "absolute";
@@ -35,13 +36,17 @@ function Popup({ movie, trailerUrl, togglePopup }) {
     }
   }
 
+  function silenceIKilledYou() {
+    setSilence(!silence);
+  }
+
   return (
     <div className="modalBg">
       <div className="modalContainer">
         <div className="videomodal">
           <ReactPlayer
             volume={1}
-            muted={false}
+            muted={silence}
             controls={false}
             width="48.34rem"
             height="22.5rem"
@@ -54,10 +59,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
               {" "}
               <Icon className="iconsize" icon={androidClose} />
             </button>
-            <div
-              className="nologo"
-              
-            />
+            <div className="nologo" />
             <div className="modalBtns">
               <div>
                 <button className="infoPlay" onClick={onPlayButtonClick}>
@@ -74,7 +76,7 @@ function Popup({ movie, trailerUrl, togglePopup }) {
                   <Icon icon={thumbsDown} />
                 </button>
               </div>
-              <button className="RoundBtn">
+              <button className="RoundBtn" onClick={silenceIKilledYou}>
                 <Icon className="Mute" icon={music_mute} />
               </button>
             </div>
@@ -99,7 +101,6 @@ function Popup({ movie, trailerUrl, togglePopup }) {
                   <h4>{movie?.runtime} Min</h4>
                 </div>
               </div>
-             
             </div>
           </div>
         </div>

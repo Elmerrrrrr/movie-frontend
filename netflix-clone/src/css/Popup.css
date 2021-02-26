@@ -37,12 +37,11 @@
   width: 20%;
   height: auto;
 }
-.nologo{
+.nologo {
   margin-left: 0.85rem;
   margin-top: 8rem;
 
   height: 5rem;
-
 }
 .modalBtns {
   display: flex;
@@ -158,3 +157,4 @@
   height: 2.4rem;
   width: 2.4rem;
 }
+

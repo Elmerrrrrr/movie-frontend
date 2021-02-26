@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
-// import axios from 'axios';
-import { search } from "./utils";
 import Movies from './Movies';
-import "../../../css/Search.css";
 
 class SearchByActor extends Component {
   state = {
@@ -14,18 +12,13 @@ class SearchByActor extends Component {
 
   search = async val => {
     this.setState({ loading: true });
-    const results = await search(
+    const res = await axios(
         `http://localhost:2021/search/actors/${val}`
     );
-    const movies = results;
-  
-      console.log(movies);
-
+    const movies = await res.data.results;
 
     this.setState({ movies, loading: false });
   };
-
-  
 
   onChangeHandler = async e => {
     this.search(e.target.value);
@@ -33,7 +26,7 @@ class SearchByActor extends Component {
   };
 
   get renderMovies() {
-    let movies = "";
+    let movies = <h1>Search by Actors</h1>;
     if (this.state.movies) {
       movies = <Movies list={this.state.movies} />;
     }
@@ -43,17 +36,12 @@ class SearchByActor extends Component {
 
   render() {
     return (
-      <div className="searchActorContainer">
-        <div className="search-input">
+      <div>
         <input
-          autocomplete="off"
-          id="searchBox"
           value={this.state.value}
           onChange={e => this.onChangeHandler(e)}
-          placeholder="Search by actor, director"
+          placeholder="Type something to search"
         />
-        <div id="autocom-box" className="autocom-box"></div>
-        </div>
         {this.renderMovies}
       </div>
     );

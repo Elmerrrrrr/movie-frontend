@@ -1,82 +1,103 @@
 .heading {
-	font-size: 30px;
-	padding: 16px 0;
-	color: #444;
-	text-align: center;
+  font-size: 30px;
+  padding: 16px 0;
+  color: #444;
+  text-align: center;
 }
 /*Container*/
 .container {
-	margin: 36px auto;
-	width: 100%;
-	max-width: 800px;
+  margin: 36px auto;
+  width: 100%;
+  max-width: 800px;
 }
 .search-label {
-	position: relative;
+  position: relative;
 }
 .container input {
-	width: 100%;
-	padding: 16px;
-	font-size: 36px;
-	font-style: italic;
-	color: #444;
-	box-sizing: border-box;
-	outline: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 36px;
+  font-style: italic;
+  color: #444;
+  box-sizing: border-box;
+  outline: none;
 }
 .search-icon {
-	position: absolute;
-	top: -10px;
-	font-size: 24px;
-	color: #555;
-	right: 18px;
+  position: absolute;
+  top: -10px;
+  font-size: 24px;
+  color: #555;
+  right: 18px;
 }
 
 /* Results */
 .results-container {
-	display: flex;
-	flex-flow: wrap;
+  display: flex;
+  flex-flow: wrap;
 }
 .result-items {
-	position: relative;
-	padding: 16px;
-	border: 1px solid #898989;
-	margin: 16px;
-	text-align: center;
-	min-width: 200px;
-	text-decoration: none;
-	box-shadow: 2px 2px 2px #898989;
+  position: relative;
+  padding: 16px;
+  border: 1px solid #898989;
+  margin: 16px;
+  text-align: center;
+  min-width: 200px;
+  text-decoration: none;
+  box-shadow: 2px 2px 2px #898989;
 }
 .image-username {
-	color: coral;
-	font-size: 18px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	margin: 0;
-	background: rgba(0, 0, 0, 0.8);
-	padding: 5px 10px;
+  color: coral;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
 }
 .image {
-	width: 100%;
-	height: 200px;
+  width: 100%;
+  height: 200px;
 }
 .image-wrapper {
-	display: flex;
-	align-items: center;
-	box-sizing: border-box;
-	height: 100%;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  justify-content: center;
 }
 /*Loader*/
 .search-loading {
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 /*Show and hide*/
 .show {
-	display: inline-block;
+  display: inline-block;
 }
 .hide {
-	display: none;
+  display: none;
+}
+
+input[type="searchbar"] {
+  width: 255px;
+  border: none;
+  background-image: url("../img/Marisearch.png");
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-size: 1.2rem;
+  padding: 12px 0px 5px 40px;
+  transition: width 0.2s ease-in-out;
+  font-size: 0.8rem;
+  color: #e5e5e5;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, 0.7);
+  border: 2.5px solid white;
+  border-radius: 5px;
+}
+
+input[type="searchbar"]::placeholder {
+  font-size: 1rem;
 }

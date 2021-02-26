@@ -1,9 +1,8 @@
 import React from "react";
-import classes from "../../../css/Movie.module.css";
-import { truncStr } from "./utils";
+import classes from "../../css/Movie.module.css";
+import { truncStr } from "./Utils";
 
-
-const MovieCard = props => {
+const MovieCard = (props) => {
   const { title, poster_path, vote_average } = props.item;
 
   return (
@@ -11,7 +10,7 @@ const MovieCard = props => {
       className={classes.Container}
       style={{
         backgroundImage:
-          poster_path && `url(http://image.tmdb.org/t/p/w185${poster_path})`
+          poster_path && `url(http://image.tmdb.org/t/p/w185${poster_path})`,
       }}
     >
       <div className={classes.VoteContainer}>

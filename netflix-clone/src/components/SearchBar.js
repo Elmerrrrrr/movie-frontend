@@ -3,18 +3,18 @@ import "../css/SearchBar.css";
 
 function SearchBar() {
 
-// getting all required elements
+
+ // getting all required elements
 const searchWrapper = document.querySelector(".search-input");
-const inputBox = document.getElementsByTagName("searchInput");
+const inputBox = document.getElementsByTagName("input");
 const suggBox = document.getElementById("autocom-box");
 const icon = document.getElementById("iconSearch");
 let linkTag = document.getElementById("linkElement");
 let webLink;
 let emptyArray = [];
-console.log("test");
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
-    console.log(e);
     let userData = e.target.value; //user enetered data
     emptyArray = [];
     if(userData){
@@ -107,7 +107,6 @@ function searchActor(){
 
     return resultsFetch;
     }
- 
 
 
 
@@ -121,7 +120,6 @@ function searchActor(){
         <div id="autocom-box" className="autocom-box">
           {/* <!-- here list are inserted from javascript --> */}
         </div>
-        
         <div id="iconSearch" className="icon"><i className="fas fa-search"></i></div>
       </div>
      
