@@ -7,4 +7,5 @@
 
 <b>Developers: <a href="#">Mari</a> | <a href="#">Kacem</a> | <a href="#">Jouke</a> | <a href="#">Elmer</a> | <a href="#">Sunny</a> © 2021
 <br>
-<a href="https://github.com/Elmerrrrrr/movie-service">Link to the backend of this project</a>
+<br>
+####<a href="https://github.com/Elmerrrrrr/movie-service">Link to the backend of this project</a>
