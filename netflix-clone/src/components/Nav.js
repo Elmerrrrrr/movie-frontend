@@ -118,6 +118,16 @@ function Nav(getValue) {
             My List
           </a>
         </li>
+        
+        <li className="navigation-tab">
+          <a
+            className={location.pathname === "/Search" ? "active" : ""}
+            href="/search"
+          >
+            Search
+          </a>
+        </li>
+
       </ul>
 
 

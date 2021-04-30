@@ -47,7 +47,6 @@ const getValue = (event) => {
     <Spacer/>
 
 
-
     {/* <SearchByActor value={value} /> */}
     
   
